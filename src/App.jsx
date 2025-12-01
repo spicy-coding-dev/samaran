@@ -1,0 +1,50 @@
+import React from "react";
+import "./index.css";
+import Navbar from "./Components/Navbar";
+import HeroSection from "./Components/heroSection";
+import AboutSection from "./Components/AboutSection";
+// import ProductsPage from "./Components/ProductSection";
+import ProductSection from "./Components/ProductSection";
+import ContactUs from "./Components/ContactSection";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AboutFullSection from "./Components/AboutFullSection";
+import ScrollToTop from "./Components/Sroll";
+import WhatsappButton from "./Components/WhatsappButton";
+import Footer from "./Components/FooterSection";
+
+export default function App() {
+  return (
+    <Router>
+      {/* <ScrollToTop/> */}
+      <Navbar />
+      <ScrollToTop />
+      <Routes>
+        {/* SINGLE PAGE WEBSITE CONTENT */}
+        <Route
+          path="/"
+          element={
+            <>
+              <section id="home" className="">
+                <HeroSection />
+              </section>
+              <section id="about">
+                <AboutSection />
+              </section>
+              <section id="product">
+                <ProductSection />
+              </section>
+              <section id="contact">
+                <ContactUs />
+              </section>
+              <WhatsappButton position="bottom-right" />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* FULL ABOUT PAGE */}
+        <Route path="/about" element={<AboutFullSection />} />
+      </Routes>
+    </Router>
+  );
+}

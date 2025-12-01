@@ -1,0 +1,178 @@
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+import logo from "../assets/samaranLogo.jpg/";
+
+function Footer() {
+  const footerLinks = [
+    {
+      title: "Quick Links",
+      links: [
+        { label: "Home", href: "#home" },
+        { label: "About us", href: "#about" },
+        { label: "Product", href: "#product" },
+        { label: "Contact us", href: "#contact" },
+      ],
+    }
+  ];
+
+  const contactInfo = [
+    {
+      icon: <Mail size={18} className="text-[#3ca2fa]" />,
+      text: "enquiry.spicycode@gmail.com",
+      href: "mailto:enquiry.spicycode@gmail.com",
+    },
+    {
+      icon: <Phone size={18} className="text-[#3ca2fa]" />,
+      text: "+91 9080132563",
+      href: "tel:+919080132563",
+    },
+    {
+      icon: <Phone size={18} className="text-[#3ca2fa]" />,
+      text: "+91 8438365490",
+      href: "tel:+918438365490",
+    },
+    {
+      icon: <MapPin size={18} className="text-[#3ca2fa]" />,
+      text: "Chennai",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: <Facebook size={20} />,
+      label: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61576032731550",
+    },
+    {
+      icon: <Instagram size={20} />,
+      label: "Instagram",
+      href: "https://www.instagram.com/spicy_coding",
+    },
+    {
+      icon: <Linkedin size={20} />,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/spicy-code-749424380/",
+    },
+  ];
+
+  return (
+    <footer className="bg-[#2F7F3D] text-white relative h-fit overflow-hidden">
+      <div className="max-w-7xl mx-auto p-14 relative z-40">
+        {/* Grid Sections */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 md:gap-8 lg:gap-10 pb-12">
+          {/* Brand */}
+          <div className="flex flex-col space-y-5">
+            <img src={logo} alt="Spicy Code Logo" className="w-50 rounded-xl" />
+
+            <p className="text-sm text-white leading-relaxed">
+              Driving Digital Transformation with Smart, Scalable IT Solutions.
+            </p>
+            <div className="flex gap-6 text-white z-50">
+            {socialLinks.map(({ icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#3ca2fa]"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
+          </div>
+
+          {/* Footer Links */}
+          {footerLinks.map((section) => (
+            <div key={section.title}>
+              <h4 className="text-white text-lg font-semibold mb-6 relative pb-2 group">
+                {section.title}
+                <span
+                  className="absolute left-0 bottom-0 w-10 h-[3px] bg-gradient-to-r from-[#3ca2fa] to-[#00d4ff] rounded-full 
+    group-hover:w-20 transition-all duration-500"
+                ></span>
+              </h4>
+
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.label} className="relative">
+                    <a
+                      href={link.href}
+                      className="hover:text-[#3ca2fa] transition-colors text-white"
+                      onClick={(e) => {
+                        if (link.href.startsWith("#")) {
+                          e.preventDefault();
+                          const sec = document.querySelector(link.href);
+                          sec?.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      target={link.href.startsWith("http") ? "_blank" : "_self"}
+                      rel={
+                        link.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : ""
+                      }
+                    >
+                      {link.label}
+                    </a>
+
+                    {link.pulse && (
+                      <span className="absolute left-[-12px] top-0 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-white text-lg font-semibold mb-6 relative pb-2 group">
+              Contact Us
+              <span
+                className="absolute left-0 bottom-0 w-10 h-[3px] bg-gradient-to-r from-[#3ca2fa] to-[#00d4ff] rounded-full 
+    group-hover:w-20 transition-all duration-500"
+              ></span>
+            </h4>
+
+            <ul className="space-y-4">
+              {contactInfo.map((item, index) => (
+                <li key={index} className="flex items-center space-x-3">
+                  {item.icon}
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="hover:text-[#3ca2fa] transition-colors text-white"
+                    >
+                      {item.text}
+                    </a>
+                  ) : (
+                    <span className="text-white hover:text-[#3ca2fa]">
+                      {item.text}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+
+        {/* Bottom */}
+        <div className="flex flex-col md:flex-row justify-center w-full h-10 rounded-xl bg-white items-center text-sm space-y-4 md:space-y-0">
+          <p className="text-black">
+            &copy; {new Date().getFullYear()} Samaran. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
