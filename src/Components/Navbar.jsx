@@ -127,12 +127,6 @@ const NavBar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <div className="relative">
-             <img
-                    src={grassImg}
-                    alt="grass"
-                    className="absolute md:-bottom-50 -bottom-10.5 left-0 w-full h-auto z-10 opacity-30"
-                  />
                <motion.ul
             className="lg:hidden bg-white backdrop-blur-sm flex flex-col items-center py-6 space-y-4 text-green-700 font-medium"
             initial={{ opacity: 0, y: -50 }}
@@ -162,9 +156,7 @@ const NavBar = () => {
                 </a>
               </motion.li>
             ))}
-          </motion.ul>
-          </div>
-       
+          </motion.ul>       
         )}
       </AnimatePresence>
     </div>

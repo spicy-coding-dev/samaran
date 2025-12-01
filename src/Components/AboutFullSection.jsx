@@ -58,7 +58,7 @@ export default function AboutFullSection() {
             whileHover={{ rotateY: 15, rotateX: 10, scale: 1.05 }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
             src={ownerImg}
-            className="w-auto h-[600px] object-contain rounded-3xl shadow-2xl border-4 border-white/20"
+            className="w-auto lg:h-[600px] object-contain rounded-3xl shadow-2xl border-4 border-white/20"
             alt="Samaran Owner"
           />
         </motion.div>

@@ -122,7 +122,7 @@ const HeroSection = () => {
             <img
               src={homeProductImg}
               alt="kulfi img"
-              className="relative z-10 md:scale-[1.3] w-full"
+              className="relative z-10 scale-[1.3] w-full"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               style={{
