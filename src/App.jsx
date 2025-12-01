@@ -1,18 +1,19 @@
 import React from "react";
 import "./index.css";
 import Navbar from "./Components/Navbar";
-import HeroSection from "./Components/heroSection";
+import HeroSection from "./Components/HeroSection";
 import AboutSection from "./Components/AboutSection";
 // import ProductsPage from "./Components/ProductSection";
 import ProductSection from "./Components/ProductSection";
 import ContactUs from "./Components/ContactSection";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AboutFullSection from "./Components/AboutFullSection";
-import ScrollToTop from "./Components/Sroll";
+import ScrollToTop from "./Components/Scroll";
 import WhatsappButton from "./Components/WhatsappButton";
 import Footer from "./Components/FooterSection";
 
 export default function App() {
+
   return (
     <Router>
       {/* <ScrollToTop/> */}
@@ -28,7 +29,7 @@ export default function App() {
                 <HeroSection />
               </section>
               <section id="about">
-                <AboutSection />
+                <AboutSection/>
               </section>
               <section id="product">
                 <ProductSection />

@@ -34,7 +34,7 @@ const AboutSection = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }} // big + center
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              <img src={kulfi} className="w-full h-full object-cover" />
+              <img src={kulfi} className="w-full h-full object-cover" loading="lazy"/>
             </motion.div>
 
             {/* Small Circle */}
@@ -44,7 +44,7 @@ const AboutSection = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }} // big + center
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              <img src={yellowKulfi} className="w-full h-full object-cover" />
+              <img src={yellowKulfi} className="w-full h-full object-cover" loading="lazy" />
             </motion.div>
 
             {/* Label top */}
@@ -151,7 +151,7 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <img src={kulfi} className="w-full h-full object-cover" />
+          <img src={kulfi} className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Mobile small image */}
@@ -161,7 +161,7 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <img src={yellowKulfi} className="w-full h-full object-cover" />
+          <img src={yellowKulfi} className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Mobile Label */}
