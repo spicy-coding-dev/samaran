@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import homeProductImg from "../assets/homeProductImg.png";
 import bgImg from "../assets/heroimgbg.png";
+import { Link } from "react-scroll";
 
 const HeroSection = () => {
   const [rotateX, setRotateX] = useState(0);
@@ -70,25 +71,35 @@ const HeroSection = () => {
           </p>
 
           <div className="flex gap-4 flex-wrap">
-              <a href="#product">
+            <Link 
+            to="product"
+                offset={-80} // adjust this value to match your header height
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-green-700 px-6 py-3 rounded-full font-medium shadow cursor-pointer" 
             >
-              View Products
-            </motion.button>
-            </a>
-            <a href="#contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border border-white/60 px-6 py-3 rounded-full font-medium cursor-pointer"
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-green-700 px-6 py-3 rounded-full font-medium shadow cursor-pointer"
+              >
+                View Products
+              </motion.button>
+            </Link>
+            {/* // inside your JSX */}
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+                offset={-80} // adjust this value to match your header height
+              // className="cursor-pointer"
             >
-              Enquire Now
-            </motion.button>
-            </a>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border border-white/60 px-6 py-3 rounded-full font-medium cursor-pointer"
+              >
+                Enquire Now
+              </motion.button>
+            </Link>
           </div>
         </motion.section>
 

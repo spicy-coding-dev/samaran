@@ -10,8 +10,6 @@ const fadeUp = {
 };
 
 const ContactUs = () => {
-
-
   // Form States
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -20,8 +18,6 @@ const ContactUs = () => {
 
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState("");
-
-
 
   // **Web3Forms Submission**
   const handleSubmit = async (e) => {
@@ -64,21 +60,19 @@ const ContactUs = () => {
 
   return (
     <section className="w-full min-h-[90vh] bg-[#e9f5e9] relative py-10 ">
-      
       <img
         src={grassImg}
         alt="grass"
-        className="absolute md:-bottom-50 -bottom-10 left-0 w-full h-auto z-0"
+        className="absolute md:-bottom-50 -bottom-12 left-0 w-full h-auto z-0"
       />
 
       <img
         src={cowImg}
         alt="cow"
-        className="absolute -left-5 bottom-50 w-48 md:w-64 lg:w-80 select-none"
+        className="absolute md:-left-5 md:bottom-50 top-0 -left-7 w-48 md:w-64 lg:w-80 select-none"
       />
 
       <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
-        
         <motion.h2
           variants={fadeUp}
           initial="hidden"
@@ -93,25 +87,22 @@ const ContactUs = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          className="text-gray-700 mb-8"
+          className="text-gray-700 mb-8 mt-15 md:mt-0 "
           style={{ fontFamily: "poppies" }}
         >
-          Distributors & retailers are welcome. Minimum order details on request.
+          Distributors & retailers are welcome.<br/> Minimum order details on
+          request.
         </motion.p>
-    
+
         {/* FORM START */}
-       <motion.form
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  onSubmit={handleSubmit}
-  className="flex flex-col gap-4 bg-black/70 p-6 rounded-lg shadow-2xl shadow-green-900/40"
-  style={{fontFamily:"inter"}}
- 
->
-
-
-        
+        <motion.form
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-4 bg-black/70 p-6 rounded-lg shadow-2xl shadow-green-900/40"
+          style={{ fontFamily: "inter" }}
+        >
           <TextField
             label="Enter Your Name"
             variant="filled"
@@ -159,7 +150,7 @@ const ContactUs = () => {
               variant="contained"
               fullWidth
               type="submit"
-              sx={{ backgroundColor: "green"}}
+              sx={{ backgroundColor: "green" }}
             >
               {loading ? "Sending..." : "Submit"}
             </Button>
@@ -167,7 +158,9 @@ const ContactUs = () => {
 
           {/* Result Message */}
           {result && (
-            <p className="text-white text-center mt-3 font-semibold">{result}</p>
+            <p className="text-white text-center mt-3 font-semibold">
+              {result}
+            </p>
           )}
         </motion.form>
       </div>

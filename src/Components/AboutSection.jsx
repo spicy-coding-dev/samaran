@@ -12,7 +12,7 @@ const AboutSection = () => {
     <section className="w-full min-h-[90vh] bg-white py-10 relative overflow-hidden">
       <img
         src={wave}
-        className="w-auto scale-[1.1] absolute h-30 md:h-auto -top-5 md:-top-10 z-0 "
+        className="w-auto lg:scale-[1.1] scale-[1.5] absolute h-30 md:h-auto -top-5 md:-top-10 z-0 "
       />
       <div className="max-w-6xl mx-auto mt-20 px-6">
         <div className="hidden md:grid grid-cols-2 gap-10 items-center">

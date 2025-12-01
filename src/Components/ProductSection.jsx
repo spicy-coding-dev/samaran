@@ -104,7 +104,7 @@ const ProductSection = () => {
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 1, repeat: Infinity }}
           alt="grass"
-          className="absolute md:-bottom-50 -bottom-10 left-0 w-full h-auto z-0 opacity-50"
+          className="absolute md:-bottom-50 -bottom-12 left-0 w-full h-auto z-0 opacity-50"
         />
         <h2 className="text-center text-4xl font-bold text-white mb-14" style={{fontFamily:"Berkshire Swash"}}>
           Our Products

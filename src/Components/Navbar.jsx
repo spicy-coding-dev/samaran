@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import logo from "../assets/samaranLogo.jpg";
-import { User } from "lucide-react";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Menu, X, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import grassImg from "../assets/grass.png";
 
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
 
   // Smooth navigation handler
@@ -24,7 +24,6 @@ const NavBar = () => {
         const section = document.querySelector(href);
         section?.scrollIntoView({ behavior: "smooth" });
       }, 300);
-
     } else {
       // Already in homepage → scroll directly
       const section = document.querySelector(href);
@@ -85,7 +84,7 @@ const NavBar = () => {
               className="px-4 py-2 rounded-full font-inter hover:bg-green-700 hover:text-white font-semibold transition-bg duration-300 cursor-pointer"
               variants={itemVariants}
               custom={i + 1}
-              onClick={()=>handleNavigation(link.href)}
+              onClick={() => handleNavigation(link.href)}
               style={{ fontFamily: "inter" }}
             >
               {link.name}
@@ -104,14 +103,12 @@ const NavBar = () => {
           custom={links.length + 1}
         >
           <button className="p-2 rounded-full border border-gray-300 bg-white hover:bg-[#2f8240] transition-colors duration-300">
-            <a
-            >
+            <a>
               <User className="text-[#2f8240] hover:text-white cursor-pointer" />
             </a>
           </button>
           <button className="p-2 rounded-full border border-gray-300 bg-white hover:bg-[#2f8240] transition-colors duration-300">
-            <a
-            >
+            <a>
               <ShoppingCart className="text-[#2f8240] hover:text-white cursor-pointer" />
             </a>
           </button>
@@ -119,57 +116,58 @@ const NavBar = () => {
 
         {/* Mobile Hamburger */}
         <div className="md:hidden text-white">
-          <button onClick={() => setMenuOpen(!menuOpen)} className="text-2xl">
-            {menuOpen ? "✖" : "☰"}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-2xl p-2"
+          >
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <motion.ul
-          className="md:hidden bg-black/95 backdrop-blur-sm flex flex-col items-center py-6 space-y-4 text-white font-medium"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          {links.map((link, i) => (
-            <motion.li
-              key={link.name}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15 }}
-            >
-              <a
-                href={link.href}
-                className="hover:text-orange-500 transition-colors duration-300"
-                onClick={handleNavigation(link.href)}
-              >
-                {link.name}
-              </a>
-            </motion.li>
-          ))}
-
-          <motion.button
-            className="bg-orange-500 px-5 py-2 rounded hover:bg-orange-600 transition-colors duration-300"
-            initial={{ opacity: 0, y: -10 }}
+      <AnimatePresence>
+        {menuOpen && (
+          <div className="relative">
+             <img
+                    src={grassImg}
+                    alt="grass"
+                    className="absolute md:-bottom-50 -bottom-12 left-0 w-full h-auto z-10 opacity-30"
+                  />
+               <motion.ul
+            className="lg:hidden bg-white backdrop-blur-sm flex flex-col items-center py-6 space-y-4 text-green-700 font-medium"
+            initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.3 }}
+            style={{ fontFamily: "inter" }}
           >
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                const section = document.querySelector("#contact");
-                section?.scrollIntoView({ behavior: "smooth" });
-                setMenuOpen(false);
-              }}
-            >
-              Get Started
-            </a>
-          </motion.button>
-        </motion.ul>
-      )}
+            {links.map((link, i) => (
+              <motion.li
+                key={link.name}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <a
+                  href={link.href}
+                  className="hover:text-orange-500 transition-colors duration-300"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(link.href);
+                    setMenuOpen(false);
+                  }}
+                >
+                  {link.name}
+                </a>
+              </motion.li>
+            ))}
+          </motion.ul>
+          </div>
+       
+        )}
+      </AnimatePresence>
     </div>
   );
 };
