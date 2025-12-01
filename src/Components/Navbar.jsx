@@ -89,7 +89,6 @@ const NavBar = () => {
             >
               {link.name}
 
-              {/* <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span> */}
             </motion.li>
           ))}
         </motion.ul>
@@ -132,7 +131,7 @@ const NavBar = () => {
              <img
                     src={grassImg}
                     alt="grass"
-                    className="absolute md:-bottom-50 -bottom-12 left-0 w-full h-auto z-10 opacity-30"
+                    className="absolute md:-bottom-50 -bottom-10.5 left-0 w-full h-auto z-10 opacity-30"
                   />
                <motion.ul
             className="lg:hidden bg-white backdrop-blur-sm flex flex-col items-center py-6 space-y-4 text-green-700 font-medium"
