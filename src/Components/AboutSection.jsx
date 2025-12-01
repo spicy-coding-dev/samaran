@@ -8,14 +8,13 @@ import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
-    
-    <section className="w-full min-h-[90vh] bg-white py-10 relative overflow-hidden">
+    <section className="w-full min-h-screen bg-white py-10 relative overflow-hidden">
       <img
         src={wave}
         className="w-auto lg:scale-[1.1] scale-[1.5] absolute h-30 md:h-auto -top-5 md:-top-10 z-0 "
       />
       <div className="max-w-6xl mx-auto mt-20 px-6">
-        <div className="hidden md:grid grid-cols-2 gap-10 items-center">
+        <div className="hidden md:grid grid-cols-2 gap-10 items-center ">
           {/* ===========================
             DESKTOP MODEL (md and up)
         ============================ */}
@@ -218,7 +217,7 @@ const AboutSection = () => {
           </p>
  <Link to="/about">
             <motion.button
-              className="bg-green-700 text-white px-6 py-3 rounded-md shadow-lg hover:bg-green-800 transition cursor-pointer"
+              className="bg-green-700 text-white px-6 py-3 mb-10 rounded-md shadow-lg hover:bg-green-800 transition cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               style={{ fontFamily: "Oswald" }}
@@ -230,6 +229,10 @@ const AboutSection = () => {
             </Link>
         </motion.div>
       </div>
+       <img
+        src={wave}
+        className="w-auto lg:scale-[1.1] scale-[1.5] absolute h-20 md:h-auto -bottom-5 md:-bottom-10 z-0  rotate-180"
+      />
     </section>
   );
 };

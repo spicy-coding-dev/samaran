@@ -98,7 +98,7 @@ const ProductSection = () => {
     <>
       <ClientReviewBox />
       {/* PRODUCT SECTION */}
-      <section className="w-full py-10 min-h-[90vh] relative bg-[#2f8240] px-6">
+      <section className="w-full py-10 min-h-[90vh] relative bg-gradient-to-b from-green-400 to-green-800 px-6">
         <motion.img
           src={grassImg}
           animate={{ y: [0, -8, 0] }}

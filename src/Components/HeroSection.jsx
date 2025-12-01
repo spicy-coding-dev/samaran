@@ -43,7 +43,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#2f8240] text-white">
+    <div className="min-h-screen bg-gradient-to-l from-green-400 to-green-800 text-white">
       <main className="max-w-6xl mx-auto px-6 py-10  grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <motion.section
           className="text-left md:pl-4"
@@ -52,7 +52,7 @@ const HeroSection = () => {
           variants={fadeUp}
         >
           <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-serif leading-tight mt-10 mb-6"
+            className="text-5xl sm:text-6xl lg:text-7xl font-serif leading-tight md:mt-10 mt-15 mb-6"
             style={{ fontFamily: "Berkshire Swash" }}
           >
             Pure Dairy.
