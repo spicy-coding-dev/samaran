@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import homeProductImg from "../assets/homeProductImg.webp";
-import bgImg from "../assets/herobg.png";
 import heroProductBgImg from "../assets/heroimgbg.webp";
 import { Link } from "react-scroll";
 
