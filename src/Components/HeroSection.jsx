@@ -44,7 +44,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="min-h-[95vh] text-white bg-gradient-to-l from-green-400 to-green-800 mt-10"
+      className="min-h-[95vh] text-white bg-linear-to-l from-green-400 to-green-800 mt-10"
       // style={{ backgroundImage: `url(${bgImg})` }}
     >
       <main className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">

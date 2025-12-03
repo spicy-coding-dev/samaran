@@ -11,14 +11,13 @@ import AboutFullSection from "./Components/AboutFullSection";
 import ScrollToTop from "./Components/Scroll";
 import WhatsappButton from "./Components/WhatsappButton";
 import Footer from "./Components/FooterSection";
-import HeroSection from "./Components/heroSection";
+import HeroSection from "../src/Components/HeroSection.jsx";
 
 
 export default function App() {
 
   return (
     <Router>
-      {/* <ScrollToTop/> */}
       <Navbar />
       <ScrollToTop />
       <Routes>
