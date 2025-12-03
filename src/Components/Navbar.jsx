@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import logo from "../assets/samaranLogo.jpg";
+import logo from "/samaranLogo.webp";
 import { ShoppingCart, Menu, X, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
-import grassImg from "../assets/grass.png";
+
 
 
 const NavBar = () => {

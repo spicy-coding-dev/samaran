@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import kulfi from "../assets/kulfi_about.jpg";
-import yellowKulfi from "../assets/yellow-kulfi-about.jpg";
-import GlareHover from "../Ui/HoverEffect";
-import wave from "../assets/milkWaves.png";
+import kulfi from "../assets/kulfi_about.webp";
+import yellowKulfi from "../assets/yellow-kulfi-about.webp";
+import wave from "../assets/milkWaves.webp";
 import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
-    <section className="w-full min-h-screen bg-white py-10 relative overflow-hidden">
+    <section className="w-full min-h-[90vh] bg-white lg:py-10 py-5 relative overflow-hidden">
       <img
         src={wave}
+        loading="lazy"
         className="w-auto lg:scale-[1.1] scale-[1.5] absolute h-30 md:h-auto -top-5 md:-top-10 z-0 "
       />
       <div className="max-w-6xl mx-auto mt-20 px-6">
@@ -229,10 +229,7 @@ const AboutSection = () => {
             </Link>
         </motion.div>
       </div>
-       <img
-        src={wave}
-        className="w-auto lg:scale-[1.1] scale-[1.5] absolute h-20 md:h-auto -bottom-5 md:-bottom-10 z-0  rotate-180"
-      />
+
     </section>
   );
 };

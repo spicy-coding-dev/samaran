@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import kulfi from "../assets/product_img/kulfi.png";
 import paneer from "../assets/product_img/panner.png";
-import ownerImg from "../assets/owner_img.jpg";
+import ownerImg from "../assets/owner_img.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },

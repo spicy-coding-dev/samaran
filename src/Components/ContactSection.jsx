@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { motion } from "framer-motion";
-import cowImg from "../assets/cow.png";
-import grassImg from "../assets/grass.png";
+import cowImg from "../assets/cow.webp";
+import grassImg from "../assets/grass.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -26,7 +26,7 @@ const ContactUs = () => {
     setResult("");
 
     const formData = new FormData();
-    formData.append("access_key", "bac70c0c-7344-4e73-a7db-4cfe77b88236");
+    formData.append("access_key", "32fe1743-590e-4b48-9cb8-b3eddec98878");
     formData.append("name", name);
     formData.append("phone", phone);
     formData.append("email", email);
@@ -62,14 +62,16 @@ const ContactUs = () => {
     <section className="w-full min-h-[90vh] bg-[#e9f5e9] relative py-10 ">
       <img
         src={grassImg}
+        loading="lazy"
         alt="grass"
-        className="absolute md:-bottom-50 -bottom-12 left-0 w-full h-auto z-0"
+        className="absolute md:-bottom-50 -bottom-15 left-0 w-full h-auto z-0"
       />
 
       <img
         src={cowImg}
+        loading="lazy"
         alt="cow"
-        className="absolute md:-left-5 md:bottom-50 top-0 -left-7 w-48 md:w-64 lg:w-80 select-none"
+        className="absolute md:-left-5 md:bottom-50 -top-6 md:top-5 -left-7 w-48 md:w-64 lg:w-80 select-none"
       />
 
       <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
@@ -77,7 +79,7 @@ const ContactUs = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          className="text-3xl md:text-4xl font-semibold text-black mb-3"
+          className="text-3xl md:text-4xl font-semibold text-black mt-15 md:mt-8"
           style={{ fontFamily: "Berkshire Swash" }}
         >
           Contact Us
@@ -87,11 +89,11 @@ const ContactUs = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          className="text-gray-700 mb-8 mt-15 md:mt-0 "
+          className="text-gray-700 mb-8 mt-5 "
           style={{ fontFamily: "poppies" }}
         >
-          Distributors & retailers are welcome.<br/> Minimum order details on
-          request.
+          Distributors & retailers are welcome.
+           Minimum order details on request.
         </motion.p>
 
         {/* FORM START */}
@@ -111,6 +113,9 @@ const ContactUs = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             InputProps={{ style: { background: "white" } }}
+            InputLabelProps={{
+              style: { fontFamily: "inter" },
+            }}
           />
 
           <TextField
@@ -121,6 +126,9 @@ const ContactUs = () => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             InputProps={{ style: { background: "white" } }}
+            InputLabelProps={{
+              style: { fontFamily: "inter" },
+            }}
           />
 
           <TextField
@@ -131,6 +139,9 @@ const ContactUs = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             InputProps={{ style: { background: "white" } }}
+            InputLabelProps={{
+              style: { fontFamily: "inter" },
+            }}
           />
 
           <TextField
@@ -143,6 +154,9 @@ const ContactUs = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             InputProps={{ style: { background: "white" } }}
+            InputLabelProps={{
+              style: { fontFamily: "inter" },
+            }}
           />
 
           <motion.div whileTap={{ scale: 0.95 }}>
@@ -151,6 +165,7 @@ const ContactUs = () => {
               fullWidth
               type="submit"
               sx={{ backgroundColor: "green" }}
+              style={{ fontFamily: "inter" }}
             >
               {loading ? "Sending..." : "Submit"}
             </Button>

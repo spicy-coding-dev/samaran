@@ -9,8 +9,8 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import grassImg from "../assets/grass.png"; // update your path
-import cow from "../assets/cow.png";
+import grassImg from "../assets/grass.webp"; // update your path
+// import cow from "../assets/cow.png";
 
 import kulfiImg from "../assets/product_img/kulfi.png";
 import pannerImg from "../assets/product_img/panner.png";
@@ -98,7 +98,7 @@ const ProductSection = () => {
     <>
       <ClientReviewBox />
       {/* PRODUCT SECTION */}
-      <section className="w-full py-10 min-h-[90vh] relative bg-gradient-to-b from-green-400 to-green-800 px-6">
+      <section className="w-full py-10 min-h-[90vh] relative bg-green-800 px-6">
         <motion.img
           src={grassImg}
           animate={{ y: [0, -8, 0] }}
@@ -148,6 +148,7 @@ const ProductSection = () => {
               <motion.img
                 src={item.img}
                 alt={item.title}
+                loading="lazy"
                 className="w-full h-72 object-cover rounded-xl mb-5"
               />
 

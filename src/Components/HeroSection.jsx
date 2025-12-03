@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import homeProductImg from "../assets/homeProductImg.png";
-import bgImg from "../assets/heroimgbg.png";
+import homeProductImg from "../assets/homeProductImg.webp";
+import bgImg from "../assets/herobg.png";
+import heroProductBgImg from "../assets/heroimgbg.webp";
 import { Link } from "react-scroll";
 
 const HeroSection = () => {
@@ -43,8 +44,11 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-l from-green-400 to-green-800 text-white">
-      <main className="max-w-6xl mx-auto px-6 py-10  grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+    <div
+      className="min-h-[95vh] text-white bg-gradient-to-l from-green-400 to-green-800 mt-10"
+      // style={{ backgroundImage: `url(${bgImg})` }}
+    >
+      <main className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <motion.section
           className="text-left md:pl-4"
           initial="hidden"
@@ -71,10 +75,9 @@ const HeroSection = () => {
           </p>
 
           <div className="flex gap-4 flex-wrap">
-            <Link 
-            to="product"
-                offset={-80} // adjust this value to match your header height
-
+            <Link
+              to="product"
+              offset={-70} // adjust this value to match your header height
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -89,7 +92,7 @@ const HeroSection = () => {
               to="contact"
               smooth={true}
               duration={500}
-                offset={-80} // adjust this value to match your header height
+              offset={-80} // adjust this value to match your header height
               // className="cursor-pointer"
             >
               <motion.button
@@ -105,23 +108,25 @@ const HeroSection = () => {
 
         <aside className="relative overflow-hidden flex flex-col items-center md:items-end">
           <motion.div
-            className="relative w-full max-w-sm md:max-w-md lg:max-w-lg mt-20"
+            className="relative w-full max-w-sm md:max-w-md lg:max-w-lg mt-15"
             initial="hidden"
             animate="show"
             variants={fadeUp}
           >
             {/* BACKGROUND IMAGE */}
             <motion.img
-              src={bgImg}
-              className="absolute md:top-5  md:-left-10 -top-10 left-0 md:w-full md:h-full object-cover scale-110 opacity-60 z-0"
-              alt="bg"
+              src={heroProductBgImg}
+              className="absolute md:top-5  md:-left-10 -top-10 left-0 md:w-full md:h-full object-cover scale-110 opacity-100 z-0"
+              alt="product bg"
+              loading="eager"
               variants={float} // subtle floating
             />
 
             {/* MAIN FRONT IMAGE */}
             <img
               src={homeProductImg}
-              alt="kulfi img"
+              alt="Samaran kulfi img"
+              loading="eager"
               className="relative z-10 scale-[1.3] w-full"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
@@ -134,7 +139,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.blockquote
-            className="text-xl sm:text-2xl font-serif mr-20 text-right max-w-xs  md:max-w-md mt-20"
+            className="text-xl sm:text-2xl font-serif mr-20 text-right max-w-xs  md:max-w-md mt-15"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}

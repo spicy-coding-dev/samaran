@@ -30,8 +30,8 @@ export default function ReviewGlassFloat() {
     transition={{ duration: 0.5 }}
     className="bg-white w-64 p-5 rounded-lg shadow-lg border-l-5 border-green-500"
   >
-    <h3 className="font-bold text-gray-900">Customer Review</h3>
-    <p className="text-gray-700 text-sm mt-2">"{current.text}"</p>
+    <h3 className="font-bold text-gray-900" style={{fontFamily:"inter"}}>Customer Review</h3>
+    <p className="text-gray-700 text-sm mt-2" style={{fontFamily:"inter",fontWeight:"400"}}>"{current.text}"</p>
     <p className="text-gray-500 text-xs mt-2">– {current.author}</p>
   </motion.div>
 </div>
