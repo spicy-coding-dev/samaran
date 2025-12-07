@@ -4,8 +4,10 @@ import {
   MapPin,
   Facebook,
   Instagram,
-  Linkedin,
 } from "lucide-react";
+import facebook from "../assets/icons/facebook.ico"
+import instagram from "../assets/icons/instagram.ico"
+import x from "../assets/icons/x.ico"
 import logo from "/samaranLogo.webp";
 
 function Footer() {
@@ -45,14 +47,21 @@ function Footer() {
 
   const socialLinks = [
     {
-      icon: <Facebook size={20} />,
+      icon: <img src={facebook} alt="Twitter" className="w-8 h-8 " />,
       label: "Facebook",
-      href: "https://www.facebook.com/profile.php?id=61576032731550",
+      href: "https://www.facebook.com/profile.php?id=61565219919689",
+      hoverColor :"hover:text-[#3ca2fa] "
     },
     {
-      icon: <Instagram size={20} />,
+      icon: <img src={instagram} alt="Twitter" className="w-8 h-8 bg-white rounded-xl" />,
       label: "Instagram",
-      href: "https://www.instagram.com/spicy_coding",
+      href: "https://www.instagram.com/nammasamaranfood?igsh=MWVhb2ozeWJzdTZoYg==",
+      hoverColor : ""
+    },
+    {
+      icon:<img src={x} alt="Twitter" className="w-8 h-8 " /> ,
+      label: "Twitter",
+      href: "https://x.com/NKulfi4677?t=eE2bZ-qJsMUlDy5g1lim5Q&s=08",
     },
   ];
 
@@ -70,7 +79,7 @@ function Footer() {
               style={{ fontFamily: "inter" }}
             >
               Samaran is your trusted dairy company, proudly crafting fresh
-              milk, pure paneer, and delightful kulfi with authentic taste and
+              milk, pure paneer and delightful kulfi with authentic taste and
               guaranteed quality.
             </p>
             <div className="flex gap-6 text-white z-50">
@@ -80,7 +89,7 @@ function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#3ca2fa]"
+                  
                 >
                   {icon}
                 </a>
@@ -163,8 +172,13 @@ function Footer() {
             &copy; {new Date().getFullYear()} Samaran. All rights reserved.
           </p>
         </div>
-        <a href="https://spicycodez.netlify.app/" target="_black" >
-          <p className="text-center mt-4 text-md" style={{fontFamily:"inter"}}>Developed By SpicycodeZ ❤️</p>
+        <a href="https://spicycodez.netlify.app/" target="_black">
+          <p
+            className="text-center mt-4 text-md"
+            style={{ fontFamily: "inter" }}
+          >
+            Developed By SpicycodeZ ❤️
+          </p>
         </a>
       </div>
       <div></div>

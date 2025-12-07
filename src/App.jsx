@@ -11,7 +11,7 @@ import AboutFullSection from "./Components/AboutFullSection";
 import ScrollToTop from "./Components/Scroll";
 import WhatsappButton from "./Components/WhatsappButton";
 import Footer from "./Components/FooterSection";
-import HeroSection from "../src/Components/HeroSection.jsx";
+import HeroSection from "./Components/HeroSection.jsx";
 
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
           path="/"
           element={
             <>
-              <section id="home" className="">
+              <section id="home">
                 <HeroSection />
               </section>
               <section id="about">

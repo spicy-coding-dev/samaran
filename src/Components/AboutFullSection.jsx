@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import kulfi from "../assets/product_img/kulfi.png";
-import paneer from "../assets/product_img/panner.png";
+import kulfi from "../assets/product_img/productKulfi.webp";
+import paneer from "../assets/product_img/productPanner.webp";
 import ownerImg from "../assets/owner_img.webp";
 
 const fadeUp = {
@@ -23,7 +23,7 @@ export default function AboutFullSection() {
   return (
     <div
       className="relative px-6 md:px-12 lg:px-32 py-24  
-      text-white bg-linear-to-b from-[#2f8240] via-[#3b9c4e] to-[#2f8240]"
+      text-white bg-gradient-to-br from-[#2f8240] via-[#3ea34f] to-[#276b34]"
     >
       {/* -------------------------------------------------- INTRO SECTION -------------------------------------------------- */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative  z-10">
