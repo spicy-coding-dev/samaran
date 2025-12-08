@@ -5,8 +5,6 @@ import { ShoppingCart, Menu, X, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 // import { Helmet } from "react-helmet";
 
-
-
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,10 +13,12 @@ const NavBar = () => {
   const location = useLocation();
   const [seo, setSeo] = useState({
     title: "Samaran Foods – Home | Pure Dairy Products & Fresh Milk Items",
-    description: "Samaran Foods offers 100% pure and fresh dairy products including kulfi, paneer, curd, and ghee. Made with traditional taste and modern hygiene to ensure real quality in every bite.",
-    keywords: "dairy products, kulfi, paneer, ghee, curd, milk products, samaran foods, samaran panner, samaran kulfi",
+    description:
+      "Samaran Foods offers 100% pure and fresh dairy products including kulfi, paneer, curd, and ghee. Made with traditional taste and modern hygiene to ensure real quality in every bite.",
+    keywords:
+      "dairy products, kulfi, paneer, ghee, curd, milk products, samaran foods, samaran panner, samaran kulfi",
   });
-  
+
   // ------------------------------
   // SEO update on route change
   // ------------------------------
@@ -56,7 +56,6 @@ const NavBar = () => {
   //       break;
   //   }
   // }, [location.pathname]);
-
 
   // Smooth navigation handler
   const handleNavigation = (href) => {
@@ -102,141 +101,123 @@ const NavBar = () => {
 
   return (
     <>
-      
-    {/* <Helmet>
-  <title>{seo.title}</title>
 
-  <meta
-    name="description"
-    content={seo.description}/>
-
-  <meta
-    name="keywords"
-    content={seo.keywords}
-  />
-
-  <meta property="og:title" content="Samaran Foods – Pure Dairy Products" />
-  <meta
-    property="og:description"
-    content="100% pure and fresh dairy products made with real taste and trusted quality."
-  />
-  <meta property="og:image" content="/samaranLogo.webp" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Samaran Foods" />
-</Helmet> */}
-
-  
-    <div className="fixed w-full z-50 top-0 left-0">
-      <nav
-        className={"flex justify-between items-center h-20 px-6 md:px-12 transition-all duration-300 bg-green/90 shadow-lg backdrop-blur-3xl"}
-      >
-        {/* Logo */}
-        <motion.img
-          className="h-12 w-auto rounded-xl cursor-pointer"
-          variants={itemVariants}
-          initial="hidden"
-          src={logo}
-          alt="company logo"
-          animate="visible"
-          custom={0}
-        ></motion.img>
-
-        {/* Desktop Links */}
-        <motion.ul
-          className="hidden lg:flex gap-6 items-center bg-white text-black rounded-full px-6 py-2 shadow-lg "
-          initial="hidden"
-          animate="visible"
+      <div className="fixed w-full z-50 top-0 left-0">
+        <nav
+          className={
+            "flex justify-between items-center h-20 px-6 md:px-12 transition-all duration-300 bg-green/90 shadow-lg backdrop-blur-3xl"
+          }
         >
-          {links.map((link, i) => (
-            <motion.li
-              key={link.name}
-              className="px-4 py-2 rounded-full font-inter hover:bg-green-700 hover:text-white font-semibold transition-bg duration-300 cursor-pointer"
-              variants={itemVariants}
-              custom={i + 1}
-              onClick={() => handleNavigation(link.href)}
-              style={{ fontFamily: "inter" }}
-            >
-              {link.name}
+          {/* Logo */}
+          <a href="https://samaranfoods.com">
+          <motion.img
+            className="h-12 w-auto rounded-xl cursor-pointer"
+            variants={itemVariants}
+            initial="hidden"
+            src={logo}
+            alt="samaran logo"
+            animate="visible"
+            custom={0}
+          ></motion.img></a>
 
-            </motion.li>
-          ))}
-        </motion.ul>
-
-        {/* Get Started Button */}
-        <motion.div
-          className="hidden lg:flex gap-4 items-center"
-          variants={itemVariants}
-          initial="hidden"
-          animate="visible"
-          custom={links.length + 1}
-        >
-          <button className="p-2 rounded-full border border-gray-300 bg-white  cursor-pointer hover:bg-[#2f8240] transition-colors duration-300"
-          aria-label="User Account"
-
-          >
-            
-              <User className="text-[#2f8240] hover:text-white cursor-pointer" />
-            
-          </button>
-          <button className="p-2 rounded-full border border-gray-300 bg-white hover:bg-[#2f8240] transition-colors duration-300"
-          aria-label="Shopping Cart"
-          >
-            
-              <ShoppingCart className="text-[#2f8240] hover:text-white cursor-pointer" />
-            
-          </button>
-        </motion.div>
-
-        {/* Mobile Hamburger */}
-        <div className="lg:hidden text-white">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-2xl p-2"
-             aria-label={menuOpen ? "Close menu" : "Open menu"} // <-- accessibility fix
-            
-          >
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {menuOpen && (
-               <motion.ul
-            className="lg:hidden bg-white backdrop-blur-sm flex flex-col items-center py-6 space-y-4 text-green-700 font-medium"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.3 }}
-            style={{ fontFamily: "inter" }}
+          {/* Desktop Links */}
+          <motion.ul
+            className="hidden lg:flex gap-6 items-center bg-white text-black rounded-full px-6 py-2 shadow-lg "
+            initial="hidden"
+            animate="visible"
           >
             {links.map((link, i) => (
               <motion.li
                 key={link.name}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ delay: i * 0.1 }}
+                className="px-4 py-2 rounded-full font-inter hover:bg-green-700 hover:text-white font-semibold transition-bg duration-300 cursor-pointer"
+                variants={itemVariants}
+                custom={i + 1}
+                onClick={() => handleNavigation(link.href)}
+                style={{ fontFamily: "inter" }}
               >
-                <a
-                  href={link.href}
-                  className="hover:text-orange-500 transition-colors duration-300"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation(link.href);
-                    setMenuOpen(false);
-                  }}
-                >
-                  {link.name}
-                </a>
+                {link.name}
               </motion.li>
             ))}
-          </motion.ul>       
-        )}
-      </AnimatePresence>
-    </div>
-      </>
+          </motion.ul>
+
+          {/* Get Started Button */}
+          <motion.div
+            className="hidden lg:flex gap-4 items-center"
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            custom={links.length + 1}
+          >
+            <button
+              className="p-2 rounded-full border border-gray-300 bg-white  cursor-pointer hover:bg-[#2f8240] transition-colors duration-300"
+              aria-label="User Account"
+            >
+              <User className="text-[#2f8240] hover:text-white cursor-pointer" />
+            </button>
+            <button
+              className="p-2 rounded-full border border-gray-300 bg-white hover:bg-[#2f8240] transition-colors duration-300"
+              aria-label="Shopping Cart"
+            >
+              <ShoppingCart className="text-[#2f8240] hover:text-white cursor-pointer" />
+            </button>
+          </motion.div>
+
+          {/* Mobile Hamburger */}
+          <div className="lg:hidden text-white">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-2xl p-2"
+              aria-label={menuOpen ? "Close menu" : "Open menu"} // <-- accessibility fix
+            >
+              {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+        </nav>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.ul
+              className="lg:hidden bg-white backdrop-blur-sm flex flex-col items-center py-6 space-y-4 text-green-700 font-medium"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.3 }}
+              style={{ fontFamily: "inter" }}
+            >
+              {links.map((link, i) => (
+                <motion.li
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <a
+                    href={link.href}
+                    className="hover:text-orange-500 transition-colors duration-300"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation(link.href);
+                      setMenuOpen(false);
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
+             {/* Hidden SEO links for Google */}
+      <div style={{ display: "none" }}>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/product">Products</a>
+        <a href="/contact">Contact</a>
+      </div>
+      </div>
+    </>
   );
 };
 

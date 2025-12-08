@@ -99,7 +99,8 @@ export default function AboutFullSection() {
             <img
               src={kulfi}
               className="w-full h-[300px] object-cover rounded-2xl shadow-xl"
-              alt="Kulfi"
+              alt="kulfi image"
+              title="samaran kulfi"
             />
             <h4 className="text-2xl font-semibold">Samaran குல்ஃபி</h4>
             <p className="opacity-90">
@@ -112,7 +113,8 @@ export default function AboutFullSection() {
             <img
               src={paneer}
               className="w-full h-[300px] object-cover rounded-2xl shadow-xl"
-              alt="Paneer"
+              alt="Panner Image"
+              title="Samaran Panner Image"
             />
             <h4 className="text-2xl font-semibold">Samaran பனீர்</h4>
             <p className="opacity-90">மென்மையும் சுவையும் நிறைந்த பனீர்.</p>

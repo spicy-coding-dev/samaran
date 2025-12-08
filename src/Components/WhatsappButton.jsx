@@ -1,6 +1,6 @@
 import React from "react";
 import whatsapp from "../assets/whatsappLogo.webp";
-
+import { motion } from "framer-motion";
 
 const WhatsappButton = ({
   phone = "919626605461", // 👈 your number
@@ -17,7 +17,13 @@ const WhatsappButton = ({
     "top-left": "top-5 left-5",
   }[position];
   return (
-    <a
+    <motion.a
+      animate={{ y: [0, -12, 0] }}
+      transition={{
+        duration: 1.6,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
       href={link}
       target="_blank"
       rel="noopener noreferrer"
@@ -35,10 +41,15 @@ const WhatsappButton = ({
     rounded-full bg-[#25D366]
   "
         >
-          <img src={whatsapp} alt="WhatsApp Logo" className="h-8 w-8" />
+          <img
+            src={whatsapp}
+            alt="WhatsApp Logo"
+            title="Whatsapp Logo"
+            className="h-8 w-8"
+          />
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 };
 

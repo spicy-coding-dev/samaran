@@ -63,14 +63,14 @@ const ContactUs = () => {
       <img
         src={grassImg}
         loading="lazy"
-        alt="grass"
+        alt="grass image"
         className="absolute md:-bottom-50 -bottom-15 left-0 w-full h-auto z-0"
       />
 
       <img
         src={cowImg}
         loading="lazy"
-        alt="cow"
+        alt="cow  image"
         className="absolute md:-left-5 md:bottom-50 -top-6 md:top-5 -left-7 w-48 md:w-64 lg:w-80 select-none"
       />
 

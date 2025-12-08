@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import homeSectionBgDes from "../assets/homeSectionBgDes.webp";
-import homeSectionBgMob from "../assets/homeSetionBgMob.webp"
+import homeSectionBgMob from "../assets/homeSetionBgMob.webp";
 
 const HeroSection = () => {
   const fadeUp = {
@@ -21,8 +21,6 @@ const HeroSection = () => {
       },
     },
   };
-
-
 
   return (
     <>
@@ -50,26 +48,30 @@ const HeroSection = () => {
 </Helmet> */}
 
       <div
-        className="min-h-screen md:min-h-[80vh] lg:min-h-[95vh] relative text-white mt-10"
+        className="min-h-screen md:min-h-[80vh] lg:min-h-[95vh] relative text-white"
         id="homeSection"
         // style={{ backgroundImage: `url(${homeSectionBg})`}}
       >
-          {/* <!-- LCP IMAGE - DISCOVERABLE + HIGH PRIORITY --> */}
-  <img 
-    src={homeSectionBgDes}
-    alt="Pure Dairy. Real Taste. Trusted Quality"
-    fetchPriority="high"   // ✅ Correct for React
-    decoding="async"
-    className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
-  />
+        {/* <!-- LCP IMAGE - DISCOVERABLE + HIGH PRIORITY --> */}
+        <img
+          src={homeSectionBgDes}
+          alt="Samaran Product"
+          fetchPriority="high" // ✅ Correct for React
+          decoding="async"
+          title="Samaran Product"
+          property="image"
+          className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
+        />
 
- <img 
-    src={homeSectionBgMob}
-    alt="Pure Dairy. Real Taste. Trusted Quality"
-    fetchPriority="high"   // ✅ Correct for React
-    decoding="async"
-    className="absolute inset-0 w-full h-full object-cover object-center md:hidden"
-  />
+        <img
+          src={homeSectionBgMob}
+          alt="Samaran Product"
+          fetchPriority="high" // ✅ Correct for React
+          decoding="async"
+          title="Samaran CProduct"
+          property="image"
+          className="absolute inset-0 w-full h-full object-cover object-center md:hidden"
+        />
         <div
           className="absolute  inset-0 bg-black/30 will-change-opacity"
           aria-hidden="true"
@@ -83,18 +85,18 @@ const HeroSection = () => {
             variants={fadeUp}
           >
             <h1
-              className="text-5xl  sm:text-6xl lg:text-7xl font-serif leading-tight md:mt-10 mt-15 mb-6"
+              className="text-5xl  sm:text-6xl lg:text-7xl font-serif leading-tight mt-13 mb-3"
               style={{
                 fontFamily: "Berkshire Swash",
                 textShadow: "3px 3px 8px rgba(0,0,0,0.6)",
               }}
             >
-              Pure Dairy.
-              <br /> Real Taste.
-              <br /> Trusted Quality.
+              Samaran Pure Dairy. <br />
+              Real Taste.
+              <br /> <span className="block">Fresh & Trusted Products</span>
             </h1>
 
-            <p
+            <h2
               className="max-w-lg text-md opacity-90 mb-6"
               style={{ fontFamily: "Poppins" }}
             >
@@ -102,7 +104,7 @@ const HeroSection = () => {
               100% pure milk by Samaran.
               <br /> Bringing traditional dairy goodness with modern hygiene and
               consistency.
-            </p>
+            </h2>
 
             <div className="flex gap-4 flex-wrap">
               <a href="#product">
@@ -128,13 +130,15 @@ const HeroSection = () => {
           </motion.section>
 
           <aside className="relative flex flex-col items-center md:items-end mb-50">
-          
             <motion.blockquote
-              className="text-xl sm:text-2xl font-serif mr-20 text-right  max-w-xs relative -bottom-50 lg:bottom-1 md:max-w-md"
+              className="text-xl sm:text-2xl font-serif  text-right  max-w-xs relative -bottom-58 lg:left-30 left-0 lg:bottom-1 md:max-w-md"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
-              style={{fontFamily:"monospace"}}
+              style={{
+                fontFamily: "monospace",
+                textShadow: "3px 3px 8px rgba(0,0,0,0.6)",
+              }}
             >
               “ஆரோக்கியமான உணவு <br /> ஆரோக்கியமான வாழ்க்கை.”
             </motion.blockquote>

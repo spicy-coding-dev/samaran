@@ -47,19 +47,19 @@ function Footer() {
 
   const socialLinks = [
     {
-      icon: <img src={facebook} alt="Twitter" className="w-8 h-8 " />,
+      icon: <img src={facebook} alt="Facebook Logo" className="w-8 h-8 " />,
       label: "Facebook",
       href: "https://www.facebook.com/profile.php?id=61565219919689",
-      hoverColor :"hover:text-[#3ca2fa] "
+    
     },
     {
-      icon: <img src={instagram} alt="Twitter" className="w-8 h-8 bg-white rounded-xl" />,
+      icon: <img src={instagram} alt="Instagram Logo" className="w-8 h-8 bg-white rounded-xl" />,
       label: "Instagram",
       href: "https://www.instagram.com/nammasamaranfood?igsh=MWVhb2ozeWJzdTZoYg==",
-      hoverColor : ""
+    
     },
     {
-      icon:<img src={x} alt="Twitter" className="w-8 h-8 " /> ,
+      icon:<img src={x} alt="X Logo" className="w-8 h-8 " /> ,
       label: "Twitter",
       href: "https://x.com/NKulfi4677?t=eE2bZ-qJsMUlDy5g1lim5Q&s=08",
     },
