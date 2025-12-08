@@ -11,7 +11,7 @@ import AboutFullSection from "./Components/AboutFullSection";
 import ScrollToTop from "./Components/Scroll";
 import WhatsappButton from "./Components/WhatsappButton";
 import Footer from "./Components/FooterSection";
-import HeroSection from "./Components/heroSection";
+import HeroSection from "./Components/HeroSection";
 
 
 export default function App() {
