@@ -61,7 +61,7 @@ const AboutSection = () => {
               >
                 <img
                   src={kulfi}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-center"
                   alt="kulfi"
                   loading="lazy"
                 />

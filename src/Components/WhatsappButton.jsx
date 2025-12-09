@@ -45,7 +45,7 @@ const WhatsappButton = ({
             src={whatsapp}
             alt="WhatsApp Logo"
             title="Whatsapp Logo"
-            className="h-8 w-8"
+            className="h-10 w-10"
           />
         </div>
       </div>

@@ -111,6 +111,7 @@ const HeroSection = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  style={{fontFamily:"Oswald",letterSpacing:"1px"}}
                   className="bg-white text-green-700 px-6 py-3 rounded-full font-medium shadow cursor-pointer"
                 >
                   View Products
@@ -121,6 +122,7 @@ const HeroSection = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  style={{fontFamily:"Oswald",letterSpacing:"1px"}}
                   className="border border-white/60 px-6 py-3 rounded-full font-medium cursor-pointer"
                 >
                   Enquire Now

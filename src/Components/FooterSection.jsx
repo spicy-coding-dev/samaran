@@ -9,6 +9,7 @@ import facebook from "../assets/icons/facebook.ico"
 import instagram from "../assets/icons/instagram.ico"
 import x from "../assets/icons/x.ico"
 import logo from "/samaranLogo.webp";
+import { href } from "react-router-dom";
 
 function Footer() {
   const footerLinks = [
@@ -100,7 +101,7 @@ function Footer() {
           {/* Footer Links */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h4 className="text-white text-lg font-semibold mb-6 relative pb-2 group">
+              <h4 className="text-white text-lg font-semibold mb-6 relative pb-2 group"        style={{fontFamily:"inter"}}>
                 {section.title}
                 <span
                   className="absolute left-0 bottom-0 w-10 h-[3px] bg-linear-to-r from-[#3ca2fa] to-[#00d4ff] rounded-full 
@@ -127,6 +128,7 @@ function Footer() {
                           ? "noopener noreferrer"
                           : ""
                       }
+                      style={{fontFamily:"inter"}}
                     >
                       {link.label}
                     </a>
@@ -138,7 +140,7 @@ function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white text-lg font-semibold mb-6 relative pb-2 group">
+            <h4 className="text-white text-lg font-semibold mb-6 relative pb-2 group" style={{fontFamily:"inter"}}>
               Contact Us
               <span
                 className="absolute left-0 bottom-0 w-10 h-[3px] bg-linear-to-r from-[#3ca2fa] to-[#00d4ff] rounded-full 
@@ -153,12 +155,17 @@ function Footer() {
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="transition-colors text-white"
+                      className="transition-colors text-white text-sm"
+                      style={{fontFamily:"poppins"}}
+                      
                     >
                       {item.text}
                     </a>
                   ) : (
-                    <span className="text-white">{item.text}</span>
+                    <span className="text-white text-sm" 
+                      style={{fontFamily:"poppins"}}
+                    
+                    >{item.text}</span>
                   )}
                 </li>
               ))}

@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { X } from "lucide-react";
 
 const reviews = [
-  { text: "Samaran kulfi taste super! Pure milk flavour 🔥", author: "Praveen" },
+  {
+    text: "Samaran kulfi taste super! Pure milk flavour 🔥",
+    author: "Praveen",
+  },
   { text: "Paneer very soft & fresh. Worth buying!", author: "Meena" },
   { text: "Best kulfi in our area. Kids love it ❤️", author: "Ravi Kumar" },
   { text: "Quality excellent. Delivery also fast!", author: "Sathish" },
@@ -11,6 +15,7 @@ const reviews = [
 
 export default function ReviewGlassFloat() {
   const [index, setIndex] = useState(0);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,23 +24,36 @@ export default function ReviewGlassFloat() {
     return () => clearInterval(interval);
   }, []);
 
+  if (!show) return null;
+
   const current = reviews[index];
 
   return (
-   <div className="fixed bottom-6 left-6 hidden md:block z-50">
-  <motion.div
-    key={index}
-    initial={{ x: -20, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 0.5 }}
-    className="bg-white w-64 p-5 rounded-lg shadow-lg border-l-5 border-green-500"
-  >
-    <h3 className="font-bold text-gray-900" style={{fontFamily:"inter"}}>Customer Review</h3>
-    <p className="text-gray-700 text-sm mt-2" style={{fontFamily:"inter",fontWeight:"400"}}>"{current.text}"</p>
-    <p className="text-gray-500 text-xs mt-2">– {current.author}</p>
-  </motion.div>
-</div>
-
-
+    <div className="fixed bottom-6 left-6 hidden md:block z-50">
+      <motion.div
+        key={index}
+        initial={{ x: -20, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="bg-white w-64 p-5 rounded-lg shadow-lg border-l-5 border-green-500"
+      >
+        <button
+          onClick={() => setShow(false)}
+          className="text-xl text-gray-500 hove:text-black absolute top-2 right-5 font-bold cursor-pointer"
+        >
+          <X />
+        </button>
+        <h3 className="font-bold text-gray-900" style={{ fontFamily: "inter" }}>
+          Customer Review
+        </h3>
+        <p
+          className="text-gray-700 text-sm mt-2"
+          style={{ fontFamily: "inter", fontWeight: "400" }}
+        >
+          "{current.text}"
+        </p>
+        <p className="text-gray-500 text-xs mt-2">– {current.author}</p>
+      </motion.div>
+    </div>
   );
 }
