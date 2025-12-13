@@ -2,78 +2,14 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "/samaranLogo.webp";
 import { ShoppingCart, Menu, X, User } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 // import { Helmet } from "react-helmet";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const navigate = useNavigate();
   const location = useLocation();
-  const [seo, setSeo] = useState({
-    title: "Samaran Foods – Home | Pure Dairy Products & Fresh Milk Items",
-    description:
-      "Samaran Foods offers 100% pure and fresh dairy products including kulfi, paneer, curd, and ghee. Made with traditional taste and modern hygiene to ensure real quality in every bite.",
-    keywords:
-      "dairy products, kulfi, paneer, ghee, curd, milk products, samaran foods, samaran panner, samaran kulfi",
-  });
 
-  // ------------------------------
-  // SEO update on route change
-  // ------------------------------
-  // useEffect(() => {
-  //   switch(location.pathname) {
-  //     case "/":
-  //       setSeo({
-  //         title: "Samaran Foods – Home | Pure Dairy Products & Fresh Milk Items",
-  //         description: "Freshly crafted kulfi, paneer, and other milk products made with 100% pure milk by Samaran. Bringing traditional dairy goodness with modern hygiene and consistency.",
-  //         keywords: "dairy products, kulfi, paneer, ghee, curd, milk products, samaran foods",
-  //       });
-  //       break;
-  //     case "/about":
-  //       setSeo({
-  //         title: "About Us – Samaran Foods | Pure Dairy Products",
-  //         description: "Learn about Samaran Foods, a trusted provider of 100% pure and fresh dairy products. Our mission is to deliver authentic taste and top-quality milk items like kulfi, paneer, ghee, and curd.",
-  //         keywords: "about Samaran Foods, dairy company, pure milk products, kulfi, paneer, ghee, curd, trusted dairy",
-  //       });
-  //       break;
-  //     case "/product":
-  //       setSeo({
-  //         title: "Products – Samaran Foods | Pure Dairy Products",
-  //         description: "Explore a wide range of fresh dairy products from Samaran Foods including kulfi, paneer, ghee, and curd. Quality and taste guaranteed in every product.",
-  //         keywords: "dairy products, kulfi, paneer, ghee, curd, fresh dairy products, Samaran Foods",
-  //       });
-  //       break;
-  //     case "/contact":
-  //       setSeo({
-  //         title: "Contact Us – Samaran Foods",
-  //         description: "Get in touch with Samaran Foods for inquiries, orders, or feedback regarding our pure dairy products.",
-  //         keywords: "contact Samaran Foods, dairy company contact, inquiries, orders",
-  //       });
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // }, [location.pathname]);
-
-  // Smooth navigation handler
-  const handleNavigation = (href) => {
-    // If NOT on homepage → navigate to home first
-    if (location.pathname !== "/") {
-      navigate("/");
-
-      // Wait homepage load → scroll
-      setTimeout(() => {
-        const section = document.querySelector(href);
-        section?.scrollIntoView({ behavior: "smooth" });
-      }, 300);
-    } else {
-      // Already in homepage → scroll directly
-      const section = document.querySelector(href);
-      section?.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -84,10 +20,10 @@ const NavBar = () => {
   }, []);
 
   const links = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Product", href: "#product" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Product", path: "/product" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   const itemVariants = {
@@ -101,7 +37,6 @@ const NavBar = () => {
 
   return (
     <>
-
       <div className="fixed w-full z-50 top-0 left-0">
         <nav
           className={
@@ -110,32 +45,41 @@ const NavBar = () => {
         >
           {/* Logo */}
           <a href="https://samaranfoods.com">
-          <motion.img
-            className="h-12 w-auto rounded-xl cursor-pointer"
-            variants={itemVariants}
-            initial="hidden"
-            src={logo}
-            alt="samaran logo"
-            animate="visible"
-            custom={0}
-          ></motion.img></a>
+            <motion.img
+              className="h-12 w-auto rounded-xl cursor-pointer"
+              variants={itemVariants}
+              initial="hidden"
+              src={logo}
+              alt="samaran logo"
+              animate="visible"
+              custom={0}
+            ></motion.img>
+          </a>
 
           {/* Desktop Links */}
           <motion.ul
-            className="hidden lg:flex gap-6 items-center bg-white text-black rounded-full px-6 py-2 shadow-lg "
+            className="hidden lg:flex gap-6 items-center bg-white text-black rounded-full px-8 py-4 shadow-lg "
             initial="hidden"
             animate="visible"
           >
             {links.map((link, i) => (
               <motion.li
                 key={link.name}
-                className="px-4 py-2 rounded-full font-inter hover:bg-green-700 hover:text-white font-semibold transition-bg duration-300 cursor-pointer"
                 variants={itemVariants}
                 custom={i + 1}
-                onClick={() => handleNavigation(link.href)}
                 style={{ fontFamily: "inter" }}
               >
-                {link.name}
+                <Link
+                  to={link.path}
+                  className={`px-4 py-2 rounded-full font-inter font-semibold transition-all duration-300 cursor-pointer
+    ${
+      location.pathname === link.path
+        ? "bg-green-700 text-white shadow-lg backdrop-blur-3xl"
+        : "hover:bg-green-700 hover:text-white text-black"
+    }`}
+                >
+                  {link.name}
+                </Link>
               </motion.li>
             ))}
           </motion.ul>
@@ -193,29 +137,30 @@ const NavBar = () => {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <a
-                    href={link.href}
-                    className="hover:text-orange-500 transition-colors duration-300"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigation(link.href);
-                      setMenuOpen(false);
-                    }}
+                  <Link
+                    to={link.path}
+                    className={`text-lg transition-colors duration-300 
+    ${
+      location.pathname === link.path
+        ? "text-green-600 font-bold"
+        : "text-green-700 hover:text-orange-500"
+    }`}
+                    onClick={() => setMenuOpen(false)}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </motion.ul>
           )}
         </AnimatePresence>
-             {/* Hidden SEO links for Google */}
-      <div style={{ display: "none" }}>
-        <a href="/">Home</a>
-        <a href="/about">About Us</a>
-        <a href="/product">Products</a>
-        <a href="/contact">Contact</a>
-      </div>
+        {/* Hidden SEO links for Google */}
+        <div style={{ display: "none" }}>
+          <a href="/">Home</a>
+          <a href="/about">About Us</a>
+          <a href="/product">Products</a>
+          <a href="/contact">Contact</a>
+        </div>
       </div>
     </>
   );

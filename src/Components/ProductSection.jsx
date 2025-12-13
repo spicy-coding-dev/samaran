@@ -168,8 +168,8 @@ const ProductSection = () => {
                 </h3>
 
                 <p
-                  className="text-gray-600 text-sm leading-relaxed mb-4"
-                  style={{ fontFamily: "Poppins " }}
+                  className="text-gray-600 text-md leading-relaxed mb-4"
+                  style={{ fontFamily: "Catamaran " }}
                 >
                   {item.description}
                 </p>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
+import {Helmet} from "react-helmet"
 import homeSectionBgDes from "../assets/homeSectionBgDes.webp";
 import homeSectionBgMob from "../assets/homeSetionBgMob.webp";
 
@@ -23,34 +23,10 @@ const HeroSection = () => {
   };
 
   return (
-    <>
-      {/* <Helmet>
-  <title>Samaran Foods – Home | Pure Dairy Products & Fresh Milk Items</title>
-
-  <meta
-    name="description"
-    content="Samaran Foods offers 100% pure and fresh dairy products including kulfi, paneer, curd, and ghee. Made with traditional taste and modern hygiene to ensure real quality in every bite."
-  />
-
-  <meta
-    name="keywords"
-    content="dairy products, kulfi, paneer, ghee, curd, milk products, samaran foods.samaran panner,samaran kulfi,samaran,best milk company,ilayangudi"
-  />
-
-  <meta property="og:title" content="Samaran Foods – Pure Dairy Products" />
-  <meta
-    property="og:description"
-    content="100% pure and fresh dairy products made with real taste and trusted quality."
-  />
-  <meta property="og:image" content="/samaranLogo.webp" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Samaran Foods" />
-</Helmet> */}
-
       <div
         className="min-h-screen md:min-h-[80vh] lg:min-h-[95vh] relative text-white"
         id="homeSection"
-        // style={{ backgroundImage: `url(${homeSectionBg})`}}
+       
       >
         {/* <!-- LCP IMAGE - DISCOVERABLE + HIGH PRIORITY --> */}
         <img
@@ -138,7 +114,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
               style={{
-                fontFamily: "monospace",
+                fontFamily: "Catamaran",
                 textShadow: "3px 3px 8px rgba(0,0,0,0.6)",
               }}
             >
@@ -147,7 +123,6 @@ const HeroSection = () => {
           </aside>
         </main>
       </div>
-    </>
   );
 };
 

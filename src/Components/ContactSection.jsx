@@ -3,61 +3,14 @@ import { TextField, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import cowImg from "../assets/cow.webp";
 import grassImg from "../assets/grass.webp";
+import ContactForm from "./ContactForm";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const ContactUs = () => {
-  // Form States
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState("");
-
-  // **Web3Forms Submission**
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setResult("");
-
-    const formData = new FormData();
-    formData.append("access_key", "32fe1743-590e-4b48-9cb8-b3eddec98878");
-    formData.append("name", name);
-    formData.append("phone", phone);
-    formData.append("email", email);
-    formData.append("message", message);
-
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        setResult("✅ Message sent successfully!");
-        setName("");
-        setPhone("");
-        setEmail("");
-        setMessage("");
-
-        setTimeout(() => setResult(""), 5000);
-      } else {
-        setResult("❌ Something went wrong!");
-      }
-    } catch (error) {
-      setResult("❌ Error sending message!");
-    } finally {
-      setLoading(false);
-    }
-  };
-
+const ContactSection = () => {
   return (
     <section className="w-full min-h-[90vh] bg-[#e9f5e9] relative py-10 ">
       <img
@@ -92,95 +45,15 @@ const ContactUs = () => {
           className="text-gray-700 mb-8 mt-5 "
           style={{ fontFamily: "poppies" }}
         >
-          Distributors & retailers are welcome.
-           Minimum order details on request.
+          Distributors & retailers are welcome. Minimum order details on
+          request.
         </motion.p>
 
         {/* FORM START */}
-        <motion.form
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-4 bg-black/70 p-6 rounded-lg shadow-2xl shadow-green-900/40"
-          style={{ fontFamily: "inter" }}
-        >
-          <TextField
-            label="Enter Your Name"
-            variant="filled"
-            fullWidth
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            InputProps={{ style: { background: "white" } }}
-            InputLabelProps={{
-              style: { fontFamily: "inter" },
-            }}
-          />
-
-          <TextField
-            label="Enter Your Phone Number"
-            variant="filled"
-            fullWidth
-            required
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            InputProps={{ style: { background: "white" } }}
-            InputLabelProps={{
-              style: { fontFamily: "inter" },
-            }}
-          />
-
-          <TextField
-            label="Enter Your Email"
-            variant="filled"
-            fullWidth
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            InputProps={{ style: { background: "white" } }}
-            InputLabelProps={{
-              style: { fontFamily: "inter" },
-            }}
-          />
-
-          <TextField
-            label="Type Your Message here"
-            multiline
-            required
-            rows={4}
-            variant="filled"
-            fullWidth
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            InputProps={{ style: { background: "white" } }}
-            InputLabelProps={{
-              style: { fontFamily: "inter" },
-            }}
-          />
-
-          <motion.div whileTap={{ scale: 0.95 }}>
-            <Button
-              variant="contained"
-              fullWidth
-              type="submit"
-              sx={{ backgroundColor: "green" }}
-              style={{ fontFamily: "inter" }}
-            >
-              {loading ? "Sending..." : "Submit"}
-            </Button>
-          </motion.div>
-
-          {/* Result Message */}
-          {result && (
-            <p className="text-white text-center mt-3 font-semibold">
-              {result}
-            </p>
-          )}
-        </motion.form>
+        <ContactForm />
       </div>
     </section>
   );
 };
 
-export default ContactUs;
+export default ContactSection;

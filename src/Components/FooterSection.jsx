@@ -1,25 +1,19 @@
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Instagram,
-} from "lucide-react";
-import facebook from "../assets/icons/facebook.ico"
-import instagram from "../assets/icons/instagram.ico"
-import x from "../assets/icons/x.ico"
+import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
+import facebook from "../assets/icons/facebook.ico";
+import instagram from "../assets/icons/instagram.ico";
+import x from "../assets/icons/x.ico";
 import logo from "/samaranLogo.webp";
-import { href } from "react-router-dom";
+import { href, Link } from "react-router-dom";
 
-function Footer() {
+function FooterSection() {
   const footerLinks = [
     {
       title: "Quick Links",
       links: [
-        { label: "Home", href: "#home" },
-        { label: "About us", href: "#about" },
-        { label: "Product", href: "#product" },
-        { label: "Contact us", href: "#contact" },
+        { label: "Home", path: "/" },
+        { label: "About us", path: "/about" },
+        { label: "Product", path: "/product" },
+        { label: "Contact us", path: "/contact" },
       ],
     },
   ];
@@ -51,16 +45,20 @@ function Footer() {
       icon: <img src={facebook} alt="Facebook Logo" className="w-8 h-8 " />,
       label: "Facebook",
       href: "https://www.facebook.com/profile.php?id=61565219919689",
-    
     },
     {
-      icon: <img src={instagram} alt="Instagram Logo" className="w-8 h-8 bg-white rounded-xl" />,
+      icon: (
+        <img
+          src={instagram}
+          alt="Instagram Logo"
+          className="w-8 h-8 bg-white rounded-xl"
+        />
+      ),
       label: "Instagram",
       href: "https://www.instagram.com/nammasamaranfood?igsh=MWVhb2ozeWJzdTZoYg==",
-    
     },
     {
-      icon:<img src={x} alt="X Logo" className="w-8 h-8 " /> ,
+      icon: <img src={x} alt="X Logo" className="w-8 h-8 " />,
       label: "Twitter",
       href: "https://x.com/NKulfi4677?t=eE2bZ-qJsMUlDy5g1lim5Q&s=08",
     },
@@ -90,7 +88,6 @@ function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  
                 >
                   {icon}
                 </a>
@@ -101,7 +98,10 @@ function Footer() {
           {/* Footer Links */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h4 className="text-white text-lg font-semibold mb-6 relative pb-2 group"        style={{fontFamily:"inter"}}>
+              <h4
+                className="text-white text-lg font-semibold mb-6 relative pb-2 group"
+                style={{ fontFamily: "inter" }}
+              >
                 {section.title}
                 <span
                   className="absolute left-0 bottom-0 w-10 h-[3px] bg-linear-to-r from-[#3ca2fa] to-[#00d4ff] rounded-full 
@@ -112,26 +112,13 @@ function Footer() {
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.label} className="relative">
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.path}
                       className="hover:text-[#3ca2fa] transition-colors text-white"
-                      onClick={(e) => {
-                        if (link.href.startsWith("#")) {
-                          e.preventDefault();
-                          const sec = document.querySelector(link.href);
-                          sec?.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
-                      target={link.href.startsWith("http") ? "_blank" : "_self"}
-                      rel={
-                        link.href.startsWith("http")
-                          ? "noopener noreferrer"
-                          : ""
-                      }
-                      style={{fontFamily:"inter"}}
+                      style={{ fontFamily: "inter" }}
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -140,7 +127,10 @@ function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white text-lg font-semibold mb-6 relative pb-2 group" style={{fontFamily:"inter"}}>
+            <h4
+              className="text-white text-lg font-semibold mb-6 relative pb-2 group"
+              style={{ fontFamily: "inter" }}
+            >
               Contact Us
               <span
                 className="absolute left-0 bottom-0 w-10 h-[3px] bg-linear-to-r from-[#3ca2fa] to-[#00d4ff] rounded-full 
@@ -156,16 +146,17 @@ function Footer() {
                     <a
                       href={item.href}
                       className="transition-colors text-white text-sm"
-                      style={{fontFamily:"poppins"}}
-                      
+                      style={{ fontFamily: "poppins" }}
                     >
                       {item.text}
                     </a>
                   ) : (
-                    <span className="text-white text-sm" 
-                      style={{fontFamily:"poppins"}}
-                    
-                    >{item.text}</span>
+                    <span
+                      className="text-white text-sm"
+                      style={{ fontFamily: "poppins" }}
+                    >
+                      {item.text}
+                    </span>
                   )}
                 </li>
               ))}
@@ -193,4 +184,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default FooterSection;

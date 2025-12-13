@@ -130,8 +130,8 @@ const AboutSection = () => {
             >
               <div className="mb-4">
                 <h2
-                  className="text-3xl md:text-4xl font-bold mb-2"
-                  style={{ fontFamily: "Berkshire Swash" }}
+                  className="text-3xl md:text-4xl  font-bold mb-2"
+                  style={{ fontFamily: "Berkshire Swash"}}
                 >
                   About Us
                 </h2>

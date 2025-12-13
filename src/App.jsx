@@ -1,52 +1,28 @@
 import React from "react";
 import "./index.css";
 import Navbar from "./Components/Navbar";
-
-import AboutSection from "./Components/AboutSection";
-
-import ProductSection from "./Components/ProductSection";
-import ContactUs from "./Components/ContactSection";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AboutFullSection from "./Components/AboutFullSection";
 import ScrollToTop from "./Components/Scroll";
 import WhatsappButton from "./Components/WhatsappButton";
-import Footer from "./Components/FooterSection";
-import HeroSection from "./Components/HeroSection";
-
+import HomePage from "./pages/HomePage";
+import FooterSection from "./Components/FooterSection";
+import AboutPage from "./pages/AboutPage";
+import ProductPage from "./pages/ProductPage";
+import ContactPage from "./pages/ContactPage";
 
 export default function App() {
-
   return (
     <Router>
       <Navbar />
       <ScrollToTop />
       <Routes>
-        {/* SINGLE PAGE WEBSITE CONTENT */}
-        <Route
-          path="/"
-          element={
-            <>
-              <section id="home">
-                <HeroSection />
-              </section>
-              <section id="about">
-                <AboutSection/>
-              </section>
-              <section id="product">
-                <ProductSection />
-              </section>
-              <section id="contact">
-                <ContactUs />
-              </section>
-              <WhatsappButton position="bottom-right" />
-              <Footer />
-            </>
-          }
-        />
-
-        {/* FULL ABOUT PAGE */}
-        <Route path="/about" element={<AboutFullSection />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
+      <WhatsappButton position="bottom-right" />
+      <FooterSection />
     </Router>
   );
 }
