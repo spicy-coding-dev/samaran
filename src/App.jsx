@@ -18,7 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/product" element={<ProductPage />} />
+        <Route path="/products" element={<ProductPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <WhatsappButton position="bottom-right" />

@@ -88,7 +88,7 @@ const ContactPage = () => {
         style={{ fontFamily: "poppins" }}
       >
         {/* CONTENT */}
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 relative  z-10">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 relative  z-10">
           {/* LEFT SECTION */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -113,22 +113,22 @@ const ContactPage = () => {
               Samaran Foods Industries – Ilayangudi, Tamil Nadu
             </h2>
 
-            <p className="flex items-start gap-3 text-gray-700">
+            <p className="flex items-start gap-3 text-gray-700 text-sm md:text-md">
               <MapPin className="mt-1" />
-              <strong>Address:</strong>Samaran Food Industries, Ilayangudi,{" "}
-              <br />
-              Sivaganga District, Tamil Nadu – 630702
+              <strong>Address:</strong>Samaran Food Industries <br />
+              Ilayangudi, Sivaganga District,
+              <br /> Tamil Nadu – 630702
             </p>
 
-            <p className="flex items-center gap-3 text-gray-700">
+            <p className="flex items-center gap-3 text-gray-700 text-sm md:text-md">
               <Phone />
               <strong>Phone :</strong>9629340194, 8489701768
             </p>
 
-            <p className="flex items-center gap-3 text-gray-700">
+            <p className="flex items-center gap-3 text-gray-700 text-sm md:text-md">
               <Mail /> <strong>Email :</strong>nammasamarankulfi@gmail.com
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm md:text-md">
               Contact us for fresh and hygienic <strong>dairy products</strong>{" "}
               including
               <strong> kulfi</strong>, <strong>paneer</strong> and
@@ -138,6 +138,7 @@ const ContactPage = () => {
           </motion.div>
 
           {/* RIGHT SECTION */}
+
           <ContactForm />
         </div>
       </div>
