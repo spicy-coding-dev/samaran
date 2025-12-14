@@ -113,20 +113,20 @@ const ContactPage = () => {
               Samaran Foods Industries – Ilayangudi, Tamil Nadu
             </h2>
 
-            <p className="flex items-start gap-3 text-gray-700 text-sm md:text-md">
+            <p className="flex items-start gap-2 text-gray-700 text-sm md:text-md">
               <MapPin className="mt-1" />
               <strong>Address:</strong>Samaran Food Industries <br />
               Ilayangudi, Sivaganga District,
               <br /> Tamil Nadu – 630702
             </p>
 
-            <p className="flex items-center gap-3 text-gray-700 text-sm md:text-md">
+            <p className="flex items-center gap-2 text-gray-700 text-sm md:text-md">
               <Phone />
-              <strong>Phone :</strong>9629340194, 8489701768
+              <strong>Phone:</strong>9629340194, 8489701768
             </p>
 
-            <p className="flex items-center gap-3 text-gray-700 text-sm md:text-md">
-              <Mail /> <strong>Email :</strong>nammasamarankulfi@gmail.com
+            <p className="flex items-center gap-2 text-gray-700 text-sm md:text-md">
+              <Mail /> <strong>Email:</strong>nammasamarankulfi@gmail.com
             </p>
             <p className="text-gray-600 text-sm md:text-md">
               Contact us for fresh and hygienic <strong>dairy products</strong>{" "}

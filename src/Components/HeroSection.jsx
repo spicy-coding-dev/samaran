@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {Helmet} from "react-helmet"
 import homeSectionBgDes from "../assets/homeSectionBgDes.webp";
 import homeSectionBgMob from "../assets/homeSetionBgMob.webp";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const fadeUp = {
@@ -83,7 +84,7 @@ const HeroSection = () => {
             </h2>
 
             <div className="flex gap-4 flex-wrap">
-              <a href="#product">
+              <Link to = "/products">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -92,9 +93,9 @@ const HeroSection = () => {
                 >
                   View Products
                 </motion.button>
-              </a>
+              </Link>
               {/* // inside your JSX */}
-              <a href="#contact">
+              <Link to="/contact">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -103,7 +104,7 @@ const HeroSection = () => {
                 >
                   Enquire Now
                 </motion.button>
-              </a>
+              </Link>
             </div>
           </motion.section>
 

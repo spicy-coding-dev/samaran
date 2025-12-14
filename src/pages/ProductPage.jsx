@@ -104,6 +104,13 @@ const ProductPage = () => {
       "brand": {
         "@type": "Brand",
         "name": "Samaran Foods"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://samaranfoods.com/products",
+        "priceCurrency": "INR",
+        "price": "60",
+        "availability": "https://schema.org/InStock"
       }
     }
     `}
@@ -120,6 +127,13 @@ const ProductPage = () => {
       "brand": {
         "@type": "Brand",
         "name": "Samaran Foods"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://samaranfoods.com/products",
+        "priceCurrency": "INR",
+        "price": "100",
+        "availability": "https://schema.org/InStock"
       }
     }
     `}

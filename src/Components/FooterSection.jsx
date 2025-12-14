@@ -12,7 +12,7 @@ function FooterSection() {
       links: [
         { label: "Home", path: "/" },
         { label: "About us", path: "/about" },
-        { label: "Product", path: "/products" },
+        { label: "Products", path: "/products" },
         { label: "Contact us", path: "/contact" },
       ],
     },

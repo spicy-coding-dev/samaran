@@ -3,8 +3,8 @@ import whatsapp from "../assets/whatsappLogo.webp";
 import { motion } from "framer-motion";
 
 const WhatsappButton = ({
-  phone = "919626605461", // 👈 your number
-  message = "Vanakkam! I would like to know more about your services.",
+  phone = "919626605761", // 👈 your number
+  message = "Vanakkam! I would like to know more about your Products.",
   position = "bottom-right",
 }) => {
   const encodedMessage = encodeURIComponent(message);

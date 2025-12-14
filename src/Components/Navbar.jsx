@@ -22,7 +22,7 @@ const NavBar = () => {
   const links = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Product", path: "/products" },
+    { name: "Products", path: "/products" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -110,7 +110,9 @@ const NavBar = () => {
           <div className="lg:hidden text-white">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-2xl p-2"
+              className={`text-2xl p-2 ${location.pathname === "/products" || location.pathname === "/contact"
+        ? "text-black"
+        : "text-white"} `}
               aria-label={menuOpen ? "Close menu" : "Open menu"} // <-- accessibility fix
             >
               {menuOpen ? <X size={28} /> : <Menu size={28} />}
