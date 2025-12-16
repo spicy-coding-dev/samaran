@@ -96,6 +96,8 @@ export default function AboutPage() {
           }
           `}
         </script>
+         {/* canonical Tag */}
+        <link rel="canonical" href="https://www.samaranfoods.com/about"/>
       </Helmet>
       <div
         className="relative px-6 md:px-12 lg:px-32 py-24  

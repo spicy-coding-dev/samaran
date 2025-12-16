@@ -9,6 +9,7 @@ import FooterSection from "./Components/FooterSection";
 import AboutPage from "./pages/AboutPage";
 import ProductPage from "./pages/ProductPage";
 import ContactPage from "./pages/ContactPage";
+import PageNotFound from "./pages/404Page";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<PageNotFound/>}/>
       </Routes>
       <WhatsappButton position="bottom-right" />
       <FooterSection />

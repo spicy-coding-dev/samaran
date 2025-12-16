@@ -18,7 +18,7 @@ const HomePage = () => {
           content="Samaran Pure Dairy offers fresh kulfi, paneer, and pure milk products made with 100% hygienic processes. Trusted dairy brand in Tamil Nadu delivering real taste and quality."
         />
 
-        {/* Keywords (not very powerful now, but ok to add) */}
+        {/* Keywords */}
         <meta
           name="keywords"
           content="Samaran Dairy, Pure Dairy Products, Fresh Kulfi, Paneer Manufacturer, Milk Products Tamil Nadu, Traditional Kulfi, Hygienic Dairy Foods"
@@ -79,6 +79,8 @@ const HomePage = () => {
         </script>
         {/* Robots */}
         <meta name="robots" content="index, follow" />
+        {/* canonical Tag */}
+        <link rel="canonical" href="https://www.samaranfoods.com"/>
       </Helmet>
       <HeroSection />
       <AboutSection />

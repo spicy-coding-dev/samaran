@@ -20,7 +20,7 @@ const ContactPage = () => {
           content="Samaran Foods contact, dairy products Ilayangudi, kulfi, paneer, ghee, milk, Samaran Foods email, Samaran Foods phone number"
         />
         {/* Language */}
-        <meta http-equiv="Content-Language" content="en, ta" />
+        <meta http-equiv="Content-Language" content="en" />
 
         {/* Open Graph */}
         <meta
@@ -82,6 +82,8 @@ const ContactPage = () => {
 }
 `}
         </script>
+        {/* canonical Tag */}
+        <link rel="canonical" href="https://www.samaranfoods.com/contact" />
       </Helmet>
       <div
         className="w-full relative pt-32 pb-20 px-6 md:px-20"

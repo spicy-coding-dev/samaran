@@ -3,9 +3,10 @@ import facebook from "../assets/icons/facebook.ico";
 import instagram from "../assets/icons/instagram.ico";
 import x from "../assets/icons/x.ico";
 import logo from "/samaranLogo.webp";
-import { href, Link } from "react-router-dom";
+import { href, Link, useLocation } from "react-router-dom";
 
 function FooterSection() {
+  const Location = useLocation()
   const footerLinks = [
     {
       title: "Quick Links",
@@ -172,7 +173,7 @@ function FooterSection() {
         </div>
         <a href="https://spicycodez.netlify.app/" target="_black">
           <p
-            className="text-center mt-4 text-md"
+            className="text-center mt-4 text-sm"
             style={{ fontFamily: "inter" }}
           >
             Developed By SpicycodeZ ❤️

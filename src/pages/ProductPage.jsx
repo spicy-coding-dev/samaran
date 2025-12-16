@@ -138,6 +138,9 @@ const ProductPage = () => {
     }
     `}
         </script>
+
+        {/* canonical Tag */}
+        <link rel="canonical" href="https://www.samaranfoods.com/products"/>
       </Helmet>
       <div className="w-full bg-white py-16 px-2 md:px-10 mt-10 ">
         <div className="w-full md:h-130 h-50 mb-10">
