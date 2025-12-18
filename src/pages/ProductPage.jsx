@@ -183,6 +183,7 @@ const ProductPage = () => {
                 initial={{ opacity: 0, scale: 0.7, y: 50 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
                 className={`flex justify-center
   order-2
   ${index % 2 === 0 ? "md:order-2" : "md:order-1"}
@@ -193,7 +194,10 @@ const ProductPage = () => {
                   title={item.name}
                   alt={item.name}
                   loading="lazy"
-                  className="w-[320px] md:w-[550px] md:h-100 drop-shadow-xl rounded-2xl"
+                  className="w-[320px] md:w-[550px]
+    aspect-16/11
+    drop-shadow-xl
+    rounded-2xl"
                 />
               </motion.div>
 

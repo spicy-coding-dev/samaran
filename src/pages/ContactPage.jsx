@@ -21,7 +21,6 @@ const ContactPage = () => {
         />
         {/* Language */}
         <meta httpEquiv="Content-Language" content="en" />
-      
 
         {/* Open Graph */}
         <meta
@@ -87,22 +86,23 @@ const ContactPage = () => {
         <link rel="canonical" href="https://www.samaranfoods.com/contact" />
       </Helmet>
       <div
-        className="w-full relative pt-32 pb-20 px-6 md:px-20"
+        className="w-full  relative pt-15 mt-20 pb-9 px-6 md:px-20"
         style={{ fontFamily: "poppins" }}
       >
         {/* CONTENT */}
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 relative  z-10">
           {/* LEFT SECTION */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0,y:50 }}
+            whileInView={{ opacity: 1,y:0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
             <img
               src="/samaranLogo.webp"
               alt="Samaran Logo"
-              className="w-48 mb-4 rounded-2xl"
+              className="w-48 mb-4 aspect-2/1 rounded-2xl"
             />
 
             <h1 className="sr-only">
@@ -142,7 +142,9 @@ const ContactPage = () => {
 
           {/* RIGHT SECTION */}
 
-          <ContactForm />
+          <div className="min-h-[520px]">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </div>

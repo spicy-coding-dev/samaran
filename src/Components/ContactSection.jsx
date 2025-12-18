@@ -23,35 +23,35 @@ const ContactSection = () => {
       <img
         src={cowImg}
         loading="lazy"
-        alt="cow  image"
-        className="absolute md:-left-5 md:bottom-50 -top-6 md:top-5 -left-7 w-48 md:w-64 lg:w-80 select-none"
+        alt="cow image"
+        className="absolute md:-left-5 md:bottom-50 -top-6 md:top-5 -left-7 w-48 h-50 md:w-64 md:h-65 lg:w-80 lg:h-85 select-none"
       />
 
-      <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
-        <motion.h2
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
+      <motion.div
+        className="relative z-10 max-w-2xl mx-auto text-center px-4"
+        variants={fadeUp}
+        viewport={{once:true}}
+        initial="hidden"
+        whileInView="show"
+      >
+        <h2
           className="text-3xl md:text-4xl font-semibold text-black mt-15 md:mt-8"
           style={{ fontFamily: "Berkshire Swash" }}
         >
           Contact Us
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
+        <p
           className="text-gray-700 mb-8 mt-5 "
           style={{ fontFamily: "poppies" }}
         >
           Distributors & retailers are welcome. Minimum order details on
           request.
-        </motion.p>
+        </p>
 
         {/* FORM START */}
         <ContactForm />
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -60,6 +60,7 @@ const ContactForm = () => {
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
+        viewport={{once:true}}
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 bg-black/70 p-6 rounded-lg shadow-2xl shadow-green-900/40"
         style={{ fontFamily: "inter" }}

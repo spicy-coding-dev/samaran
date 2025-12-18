@@ -66,7 +66,7 @@ function FooterSection() {
   ];
 
   return (
-    <footer className="bg-[#2F7F3D] text-white relative h-fit overflow-hidden">
+    <footer className="bg-[#2F7F3D] text-white relative min-h-[360px] md:min-h-[280px] overflow-hidden">
       <div className="max-w-7xl mx-auto p-10 relative z-40">
         {/* Grid Sections */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 md:gap-8 lg:gap-10 pb-12">

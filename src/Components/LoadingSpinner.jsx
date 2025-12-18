@@ -3,15 +3,16 @@ import logo from "/samaranLogo.webp"; // ✅ correct path podu
 
 export default function LoadingSpinner() {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white " role="status"
+  aria-label="Loading">
       {/* Spinner */}
-      <div className="relative md:w-55 md:h-55 h-40 w-40">
+      <div className="relative md:w-90 md:h-90 h-60 w-60">
         {/* Rotating Border */}
        <div
           className="absolute inset-0 rounded-full 
           border-4 border-green-600 
           border-t-transparent border-b-transparent 
-          animate-spin"
+          animate-spin will-change-transform"
         ></div>
 
         {/* Logo inside */}
@@ -19,7 +20,7 @@ export default function LoadingSpinner() {
           <img
             src={logo}
             alt="Samaran Logo"
-            className="md:w-50 md:h-50 h-30 w-30 object-contain"
+            className="md:w-80 md:h-80 h-50 w-50 object-contain "
           />
         </div>
       </div>
