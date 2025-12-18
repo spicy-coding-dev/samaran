@@ -1,16 +1,17 @@
 import React from "react";
-import HeroSection from "../Components/HeroSection";
+
 import AboutSection from "../Components/AboutSection";
 import ProductSection from "../Components/ProductSection";
 import ContactSection from "../Components/ContactSection";
 import { Helmet } from "react-helmet";
+import HomeSection from "../Components/HomeSection";
 
 const HomePage = () => {
   return (
     <div>
       <Helmet>
         {/* Primary Title */}
-        <title>Samaran Pure Dairy – Real Taste, Fresh & Trusted Products</title>
+        <title>Home-Samaran Pure Dairy – Real Taste, Fresh & Trusted Products</title>
 
         {/* Meta Description */}
         <meta
@@ -25,7 +26,7 @@ const HomePage = () => {
         />
 
         {/* Language */}
-        <meta http-equiv="Content-Language" content="en, ta" />
+        <meta httpEquiv="Content-Language" content="en, ta" />
 
         {/* Open Graph (Social Media Preview) */}
         <meta
@@ -82,7 +83,7 @@ const HomePage = () => {
         {/* canonical Tag */}
         <link rel="canonical" href="https://www.samaranfoods.com"/>
       </Helmet>
-      <HeroSection />
+      <HomeSection/>
       <AboutSection />
       <ProductSection />
       <ContactSection />

@@ -5,7 +5,8 @@ import homeSectionBgDes from "../assets/homeSectionBgDes.webp";
 import homeSectionBgMob from "../assets/homeSetionBgMob.webp";
 import { Link } from "react-router-dom";
 
-const HeroSection = () => {
+const HomeSection = () => {
+
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -127,4 +128,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HomeSection;

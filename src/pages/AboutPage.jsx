@@ -36,7 +36,7 @@ export default function AboutPage() {
           content="dairy products, kulfi, paneer, ghee, curd, milk products, samaran foods.samaran panner,samaran kulfi,samaran,best milk company,ilayangudi"
         />
         {/* Language */}
-        <meta http-equiv="Content-Language" content="en, ta" />
+        <meta httpEquiv="Content-Language" content="en, ta" />
 
         <meta
           property="og:title"
@@ -96,8 +96,8 @@ export default function AboutPage() {
           }
           `}
         </script>
-         {/* canonical Tag */}
-        <link rel="canonical" href="https://www.samaranfoods.com/about"/>
+        {/* canonical Tag */}
+        <link rel="canonical" href="https://www.samaranfoods.com/about" />
       </Helmet>
       <div
         className="relative px-6 md:px-12 lg:px-32 py-24  
@@ -285,8 +285,12 @@ export default function AboutPage() {
             ].map((value, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-white/10 backdrop-blur-md 
-                border border-white/20 shadow-md text-white"
+                className=" p-4 rounded-xl bg-white/10 backdrop-blur-md
+    border border-white/20 shadow-md text-white
+    h-20 w-full
+    flex items-center justify-center
+    text-center text-md md:text-base
+    wrap-break-words"
               >
                 {value}
               </div>

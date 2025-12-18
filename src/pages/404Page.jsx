@@ -13,7 +13,7 @@ const PageNotFound = () => {
   
     <main className="grid min-h-full place-items-center bg-white mt-20 px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
-        <p className="text-2xl font-semibold text-indigo-500">404</p>
+        <p className="text-4xl font-semibold text-indigo-500">404</p>
 
         <h1 className="mt-4 text-5xl font-semibold tracking-tight text-black sm:text-7xl">
           Page Not Found
@@ -31,7 +31,7 @@ const PageNotFound = () => {
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link
             to="/"
-            className="rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-md bg-green-600 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
           >
             Go to Home Page | முகப்பு பக்கம்
           </Link>

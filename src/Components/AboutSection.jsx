@@ -160,7 +160,7 @@ const AboutSection = () => {
                 pure, and high-quality milk products. From traditional kulfi to
                 soft paneer, we bring authentic taste made with 100% pure milk.
               </p>
-              <a href="/about">
+              <Link to="/about">
                 <motion.button
                   className="bg-green-700 text-white px-6 py-3 rounded-md shadow-lg hover:bg-green-800 transition cursor-pointer"
                   whileHover={{ scale: 1.05 }}
@@ -169,7 +169,7 @@ const AboutSection = () => {
                 >
                   Learn More <span aria-hidden="true">→</span>
                 </motion.button>
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>

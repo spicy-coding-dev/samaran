@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import samaranKulfi from "../assets/product_img/productKulfi.webp";
 import samaranPaneer from "../assets/product_img/productPanner.webp";
 import banner from "../assets/banner/samaran_banner.webp";
-import ParticlesBackground from "../Components/ParticlesBackground";
 import { Helmet } from "react-helmet";
 
 const ProductPage = () => {
@@ -40,6 +39,21 @@ const ProductPage = () => {
     },
   ];
 
+  const bannerSlide = {
+    hidden: {
+      opacity: 0,
+      x: -80,
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div>
       <Helmet>
@@ -57,7 +71,7 @@ const ProductPage = () => {
           content="dairy products, kulfi, paneer, ghee, curd, milk products,best milk company,ilayangudi,Samaran Foods, Samaran Kulfi, Samaran Paneer, dairy products in Ilayangudi, pure milk products, kulfi manufacturer Tamil Nadu, paneer company Tamil Nadu"
         />
         {/* Language */}
-        <meta http-equiv="Content-Language" content="en, ta" />
+        <meta httpEquiv="Content-Language" content="en, ta" />
 
         <meta
           property="og:title"
@@ -69,7 +83,7 @@ const ProductPage = () => {
         />
         <meta
           property="og:image"
-          content="https://samaranfoods.com/assets/product_img/productKulfi.webp"
+          content="https://samaranfoods.com/assets/banner/samaran_banner.webp"
         />
         <meta property="og:url" content="https://samaranfoods.com/product" />
         <meta property="og:type" content="website" />
@@ -86,7 +100,7 @@ const ProductPage = () => {
         />
         <meta
           name="twitter:image"
-          content="https://samaranfoods.com/assets/product_img/productPanner.webp"
+          content="https://samaranfoods.com/assets/banner/samaran_banner.webp"
         />
         <meta name="twitter:url" content="https://samaranfoods.com/product" />
         <meta name="twitter:site" content="@NKulfi4677" />
@@ -140,39 +154,45 @@ const ProductPage = () => {
         </script>
 
         {/* canonical Tag */}
-        <link rel="canonical" href="https://www.samaranfoods.com/products"/>
+        <link rel="canonical" href="https://www.samaranfoods.com/products" />
       </Helmet>
       <div className="w-full bg-white py-16 px-2 md:px-10 mt-10 ">
-        <div className="w-full md:h-130 h-50 mb-10">
+        <motion.div
+          className="w-full md:h-130 h-50 mb-10"
+          variants={bannerSlide}
+          initial="hidden"
+          animate="show"
+        >
           <img
             src={banner}
             title="Samaran Product Banner"
             className="h-full w-full rounded-3xl"
             alt="samaran banner"
+            loading="lazy"
           />
-        </div>
+        </motion.div>
 
         <div className="max-w-7xl mx-auto flex flex-col-reverse gap-20 md:px-16 px-6 ">
           {products.map((item, index) => (
             <div
               key={item.id}
-              className={`grid md:grid-cols-2 gap-10 items-center `}
+              className={`grid md:grid-cols-2 gap-10 items-center`}
             >
               {/* Left — Product Image */}
               <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                //   className="flex justify-center"
-                className={`${
-                  index % 2 === 0 ? "order-2" : "order-1"
-                } md:order-2 flex justify-center`}
+                initial={{ opacity: 0, scale: 0.7, y: 50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                className={`flex justify-center
+  order-2
+  ${index % 2 === 0 ? "md:order-2" : "md:order-1"}
+`}
               >
                 <img
                   src={item.image}
                   title={item.name}
                   alt={item.name}
+                  loading="lazy"
                   className="w-[320px] md:w-[550px] md:h-100 drop-shadow-xl rounded-2xl"
                 />
               </motion.div>
@@ -183,7 +203,9 @@ const ProductPage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className={`${index % 2 === 0 ? "order-2" : "order-1"}`}
+                className={`order-1
+  ${index % 2 === 0 ? "md:order-1" : "md:order-2"}
+`}
               >
                 <h2
                   className="text-3xl md:text-5xl  text-[#1D3C6A]"
