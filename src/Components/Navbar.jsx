@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import logo from "/samaranLogo.webp";
 import { ShoppingCart, Menu, X, User } from "lucide-react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 // import { Helmet } from "react-helmet";
@@ -35,6 +34,17 @@ const NavBar = () => {
     }),
   };
 
+  const preloadPage = (path) => {
+  if (path === "/about") {
+    import("../pages/AboutPage");
+  }
+  if (path === "/products") {
+    import("../pages/ProductPage");
+  }
+  if (path === "/contact") {
+    import("../pages/ContactPage");
+  }
+};
   return (
     <>
       <div className="fixed w-full z-50 top-0 left-0">
@@ -46,10 +56,12 @@ const NavBar = () => {
           {/* Logo */}
           <a href="https://samaranfoods.com">
             <motion.img
-              className="h-12 w-auto rounded-xl cursor-pointer"
+              className="h-12 w-30 rounded-xl cursor-pointer"
               variants={itemVariants}
               initial="hidden"
-              src={logo}
+              src="/samaranLogo.webp"
+              loading="eager"
+              fetchpriority="high"
               alt="samaran logo"
               animate="visible"
               custom={0}
@@ -71,6 +83,7 @@ const NavBar = () => {
               >
                 <Link
                   to={link.path}
+                   onMouseEnter={() => preloadPage(link.path)}
                   className={`px-4 py-2 rounded-full font-inter font-semibold transition-all duration-300 cursor-pointer
     ${
       location.pathname === link.path
@@ -110,9 +123,12 @@ const NavBar = () => {
           <div className="lg:hidden text-white">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`text-2xl p-2 ${location.pathname === "/products" || location.pathname === "/contact"
-        ? "text-black"
-        : "text-white"} `}
+              className={`text-2xl p-2 ${
+                location.pathname === "/products" ||
+                location.pathname === "/contact"
+                  ? "text-black"
+                  : "text-white"
+              } `}
               aria-label={menuOpen ? "Close menu" : "Open menu"} // <-- accessibility fix
             >
               {menuOpen ? <X size={28} /> : <Menu size={28} />}

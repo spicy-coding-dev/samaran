@@ -72,7 +72,7 @@ function FooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 md:gap-8 lg:gap-10 pb-12">
           {/* Brand */}
           <div className="flex flex-col space-y-5">
-            <img src={logo} alt="Spicy Code Logo" className="w-50 rounded-xl" />
+            <img src={logo} alt="Samaran Logo" className="w-45 h-15 rounded-xl" />
 
             <p
               className="text-sm text-white leading-relaxed max-w-md"
@@ -89,6 +89,7 @@ function FooterSection() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  
                 >
                   {icon}
                 </a>

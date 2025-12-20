@@ -141,6 +141,8 @@ export default function AboutPage() {
               whileHover={{ rotateY: 15, rotateX: 10, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
               src={ownerImg}
+              loading="lazy"
+              
               title="Samaran Owner"
               className="w-auto lg:h-[600px] object-contain rounded-3xl shadow-2xl border-4 border-white/20"
               alt="Samaran Owner"
@@ -183,6 +185,7 @@ export default function AboutPage() {
                 src={kulfi}
                 className="w-full h-[300px] object-cover rounded-2xl shadow-xl"
                 alt="kulfi image"
+                loading="lazy"
                 title="samaran kulfi"
               />
               <h4 className="text-2xl font-semibold">Samaran குல்ஃபி</h4>
@@ -197,6 +200,7 @@ export default function AboutPage() {
                 src={paneer}
                 className="w-full h-[300px] object-cover rounded-2xl shadow-xl"
                 alt="Panner Image"
+                loading="lazy"
                 title="Samaran Panner Image"
               />
               <h4 className="text-2xl font-semibold">Samaran பனீர்</h4>

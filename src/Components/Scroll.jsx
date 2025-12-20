@@ -6,7 +6,14 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    const timeout = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "instant", // smooth vendaam
+      });
+    }, 100); // 👈 small delay (key)
+
+    return () => clearTimeout(timeout);
   }, [pathname]);
 
   return null;

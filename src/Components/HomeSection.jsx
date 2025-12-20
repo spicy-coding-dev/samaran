@@ -36,6 +36,7 @@ const HomeSection = () => {
           alt="Samaran Product"
           fetchPriority="high" // ✅ Correct for React
           decoding="async"
+          loading="lazy"
           title="Samaran Product"
           property="image"
           className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
@@ -46,6 +47,7 @@ const HomeSection = () => {
           alt="Samaran Product"
           fetchPriority="high" // ✅ Correct for React
           decoding="async"
+          loading="lazy"
           title="Samaran CProduct"
           property="image"
           className="absolute inset-0 w-full h-full object-cover object-center md:hidden"

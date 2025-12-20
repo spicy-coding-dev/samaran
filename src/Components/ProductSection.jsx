@@ -158,6 +158,7 @@ const ProductSection = () => {
                   title={item.title}
                   property="image"
                   loading="lazy"
+                  
                   className="w-full h-72 object-cover rounded-xl mb-5"
                 />
 

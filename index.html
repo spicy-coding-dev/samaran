@@ -62,12 +62,25 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <!-- Fonts -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Load Google Fonts async (NON render-blocking) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:wght@400;600&family=Oswald:wght@400&family=Poppins:ital,wght@1,400&display=swap&family=Catamaran:wght@400"
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:wght@400;600&family=Oswald:wght@400&family=Poppins:ital,wght@1,400&family=Catamaran:wght@400&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+
+    <!-- Fallback for no-JS -->
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:wght@400;600&family=Oswald:wght@400&family=Poppins:ital,wght@1,400&family=Catamaran:wght@400&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <script type="application/ld+json">
       {
