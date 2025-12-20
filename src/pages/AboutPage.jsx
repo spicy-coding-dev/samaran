@@ -24,7 +24,7 @@ export default function AboutPage() {
   return (
     <div>
       <Helmet>
-        <title>About us - Samaran Foods | Trusted Dairy Brand </title>
+        <title>About Us – Samaran Foods | Trusted Dairy Brand </title>
 
         <meta
           name="description"
@@ -33,7 +33,7 @@ export default function AboutPage() {
 
         <meta
           name="keywords"
-          content="dairy products, kulfi, paneer, ghee, curd, milk products, samaran foods.samaran panner,samaran kulfi,samaran,best milk company,ilayangudi"
+          content="dairy products, kulfi, paneer, ghee, curd, milk products, samaran foods,samaran panner,samaran kulfi,samaran,best milk company,ilayangudi"
         />
         {/* Language */}
         <meta httpEquiv="Content-Language" content="en, ta" />
@@ -51,12 +51,11 @@ export default function AboutPage() {
           property="og:image"
           content="https://samaranfoods.com/samaranLogo.png"
         />
-        <meta
-          property="og:image"
-          content="https://www.samaranfoods.com/samaranLogo.webp"
-        />
+       
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Samaran Foods" />
+        <meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -70,7 +69,7 @@ export default function AboutPage() {
         />
         <meta
           name="twitter:image"
-          content="https://samaranfoods.com/samaranLogo.png"
+          content="https://samaranfoods.com/samaranLogo.webp"
         />
         <meta name="twitter:url" content="https://samaranfoods.com/about" />
         <meta name="twitter:site" content="@NKulfi4677" />
@@ -79,7 +78,7 @@ export default function AboutPage() {
         <script type="application/ld+json">
           {`
           {
-            "@context": "https://www.schema.org",
+            "@context": "https://schema.org",
             "@type": "AboutPage",
             "name": "About Samaran Foods",
             "url": "https://samaranfoods.com/about",
@@ -97,7 +96,7 @@ export default function AboutPage() {
           `}
         </script>
         {/* canonical Tag */}
-        <link rel="canonical" href="https://www.samaranfoods.com/about" />
+        <link rel="canonical" href="https://samaranfoods.com/about" />
       </Helmet>
       <div
         className="relative px-6 md:px-12 lg:px-32 py-24  

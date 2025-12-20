@@ -11,7 +11,7 @@ const HomePage = () => {
     <div>
       <Helmet>
         {/* Primary Title */}
-        <title>Home-Samaran Pure Dairy – Real Taste, Fresh & Trusted Products</title>
+        <title>Home – Samaran Pure Dairy | Real Taste, Fresh & Trusted Products</title>
 
         {/* Meta Description */}
         <meta
@@ -39,11 +39,13 @@ const HomePage = () => {
         />
         <meta
           property="og:image"
-          content="https://www.samaranfoods.com/samaranLogo.webp"
+          content="https://samaranfoods.com/samaranLogo.webp"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://samaranfoods.com/" />
         <meta property="og:site_name" content="Samaran Pure Dairy" />
+        <meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -57,7 +59,7 @@ const HomePage = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.samaranfoods.com/samaranLogo.webp"
+          content="https://samaranfoods.com/samaranLogo.webp"
         />
         <meta name="twitter:url" content="https://samaranfoods.com" />
         <meta name="twitter:site" content="@NKulfi4677" />
@@ -65,7 +67,7 @@ const HomePage = () => {
         <script type="application/ld+json">
           {`
           {
-            "@context": "http://www.schema.org",
+            "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Home",
             "url": "https://samaranfoods.com/",
@@ -81,7 +83,7 @@ const HomePage = () => {
         {/* Robots */}
         <meta name="robots" content="index, follow" />
         {/* canonical Tag */}
-        <link rel="canonical" href="https://www.samaranfoods.com"/>
+        <link rel="canonical" href="https://samaranfoods.com"/>
       </Helmet>
       <HomeSection/>
       <AboutSection />

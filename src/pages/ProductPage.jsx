@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import samaranKulfi from "../assets/product_img/productKulfi.webp";
 import samaranPaneer from "../assets/product_img/productPanner.webp";
-import banner from "../assets/banner/samaran_banner.webp";
+import banner from "/samaran_banner.webp";
 import { Helmet } from "react-helmet";
 
 const ProductPage = () => {
@@ -68,7 +68,7 @@ const ProductPage = () => {
 
         <meta
           name="keywords"
-          content="dairy products, kulfi, paneer, ghee, curd, milk products,best milk company,ilayangudi,Samaran Foods, Samaran Kulfi, Samaran Paneer, dairy products in Ilayangudi, pure milk products, kulfi manufacturer Tamil Nadu, paneer company Tamil Nadu"
+          content="dairy products, kulfi, paneer, ghee, curd, milk products, best milk company, ilayangudi, samaran foods, samaran kulfi, samaran paneer, dairy products in ilayangudi"
         />
         {/* Language */}
         <meta httpEquiv="Content-Language" content="en, ta" />
@@ -83,9 +83,9 @@ const ProductPage = () => {
         />
         <meta
           property="og:image"
-          content="https://samaranfoods.com/assets/banner/samaran_banner.webp"
+          content="https://samaranfoods.com/samaran_banner.webp"
         />
-        <meta property="og:url" content="https://samaranfoods.com/product" />
+        <meta property="og:url" content="https://samaranfoods.com/products" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Samaran Foods" />
         {/* Twitter Card */}
@@ -100,20 +100,32 @@ const ProductPage = () => {
         />
         <meta
           name="twitter:image"
-          content="https://samaranfoods.com/assets/banner/samaran_banner.webp"
+          content="https://samaranfoods.com/samaran_banner.webp"
         />
-        <meta name="twitter:url" content="https://samaranfoods.com/product" />
+        <meta name="twitter:url" content="https://samaranfoods.com/products" />
         <meta name="twitter:site" content="@NKulfi4677" />
         {/* Robots */}
         <meta name="robots" content="index, follow" />
+
+        {/* Collection Page Schema */}
+        <script type="application/ld+json">
+          {`
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Samaran Foods Products",
+      "url": "https://samaranfoods.com/products"
+    }
+    `}
+        </script>
 
         <script type="application/ld+json">
           {`
     {
       "@context": "https://www.schema.org",
-      "@type": "Product",
+      "@type": "CollectionPage",
       "name": "Samaran Kulfi",
-      "image": "https://samaranfoods.com/assets/product_img/productKulfi.webp",
+      "image": "https://samaranfoods.com/samaran_banner.webp",
       "description": "Traditional fresh kulfi made from pure milk.",
       "brand": {
         "@type": "Brand",
@@ -133,10 +145,10 @@ const ProductPage = () => {
         <script type="application/ld+json">
           {`
     {
-      "@context": "https://www.schema.org",
-      "@type": "Product",
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
       "name": "Samaran Paneer",
-      "image": "https://samaranfoods.com/assets/product_img/productPaneer.webp",
+      "image": "https://samaranfoods.com/samaran_banner.webp",
       "description": "Hygienic fresh paneer made from pure milk.",
       "brand": {
         "@type": "Brand",
@@ -154,7 +166,7 @@ const ProductPage = () => {
         </script>
 
         {/* canonical Tag */}
-        <link rel="canonical" href="https://www.samaranfoods.com/products" />
+        <link rel="canonical" href="https://samaranfoods.com/products" />
       </Helmet>
       <div className="w-full bg-white py-16 px-2 md:px-10 mt-10 ">
         <motion.div

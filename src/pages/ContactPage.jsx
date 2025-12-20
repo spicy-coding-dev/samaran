@@ -31,9 +31,11 @@ const ContactPage = () => {
           property="og:description"
           content="Reach out to Samaran Foods for fresh and hygienic dairy products in Ilayangudi, Tamil Nadu. Call or email for more information."
         />
+        <meta property="og:url" content="https://samaranfoods.com/contact" />
+
         <meta
           property="og:image"
-          content="https://www.samaranfoods.com/samaranLogo.webp"
+          content="https://samaranfoods.com/samaranLogo.webp"
         />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Samaran Foods" />
@@ -60,20 +62,28 @@ const ContactPage = () => {
         <script type="application/ld+json">
           {`
 {
-  "@context": "https://www.schema.org",
+  "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Samaran Foods",
-  "image": "https://samaranfoods.com/samaranLogo.png",
+  "image": "https://samaranfoods.com/samaranLogo.webp",
   "telephone": "+91-9629340194",
   "email": "nammasamarankulfi@gmail.com",
+  "url": "https://samaranfoods.com/contact",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Ilayangudi",
     "addressRegion": "Tamil Nadu",
     "postalCode": "630702",
     "addressCountry": "IN"
-  },
-  "url": "https://samaranfoods.com/contact",
+  },]
+  "contactPoint": {
+  "@type": "ContactPoint",
+  "telephone": "+91-9629340194",
+  "contactType": "customer service",
+  "areaServed": "IN",
+  "availableLanguage": ["English", "Tamil"]
+},
+  
   "sameAs": [
     "https://www.facebook.com/profile.php?id=61565219919689",
     "https://www.instagram.com/nammasamaranfood?igsh=MWVhb2ozeWJzdTZoYg=="
@@ -83,7 +93,7 @@ const ContactPage = () => {
 `}
         </script>
         {/* canonical Tag */}
-        <link rel="canonical" href="https://www.samaranfoods.com/contact" />
+        <link rel="canonical" href="https://samaranfoods.com/contact" />
       </Helmet>
       <div
         className="w-full  relative pt-15 mt-20 pb-9 px-6 md:px-20"
@@ -93,8 +103,8 @@ const ContactPage = () => {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 relative  z-10">
           {/* LEFT SECTION */}
           <motion.div
-            initial={{ opacity: 0,y:50 }}
-            whileInView={{ opacity: 1,y:0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="space-y-6"
