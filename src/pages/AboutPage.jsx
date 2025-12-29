@@ -49,7 +49,7 @@ export default function AboutPage() {
         <meta property="og:url" content="https://samaranfoods.com/about" />
         <meta
           property="og:image"
-          content="https://samaranfoods.com/samaranLogo.png"
+          content="https://samaranfoods.com/samaranLogo.webp"
         />
        
         <meta property="og:type" content="website" />

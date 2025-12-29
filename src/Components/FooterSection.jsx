@@ -1,7 +1,7 @@
 import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
-import facebook from "../assets/icons/facebook.ico";
-import instagram from "../assets/icons/instagram.ico";
-import x from "../assets/icons/x.ico";
+import facebook from "../assets/icons/facebook.webp";
+import instagram from "../assets/icons/instagram.webp";
+import x from "../assets/icons/x.webp";
 import logo from "/samaranLogo.webp";
 import { href, Link, useLocation } from "react-router-dom";
 

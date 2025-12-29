@@ -75,23 +75,23 @@ const ContactPage = () => {
     "addressRegion": "Tamil Nadu",
     "postalCode": "630702",
     "addressCountry": "IN"
-  },]
+  },
   "contactPoint": {
-  "@type": "ContactPoint",
-  "telephone": "+91-9629340194",
-  "contactType": "customer service",
-  "areaServed": "IN",
-  "availableLanguage": ["English", "Tamil"]
-},
-  
+    "@type": "ContactPoint",
+    "telephone": "+91-9629340194",
+    "contactType": "customer service",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Tamil"]
+  },
   "sameAs": [
     "https://www.facebook.com/profile.php?id=61565219919689",
-    "https://www.instagram.com/nammasamaranfood?igsh=MWVhb2ozeWJzdTZoYg=="
+    "https://www.instagram.com/nammasamaranfood"
   ],
   "openingHours": "Mo-Su 09:00-18:00"
 }
 `}
         </script>
+
         {/* canonical Tag */}
         <link rel="canonical" href="https://samaranfoods.com/contact" />
       </Helmet>
