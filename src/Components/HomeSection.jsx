@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {Helmet} from "react-helmet"
 import homeSectionBgDes from "../assets/homeSectionBgDes.webp";
 import homeSectionBgMob from "../assets/homeSetionBgMob.webp";
 import { Link } from "react-router-dom";

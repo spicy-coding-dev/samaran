@@ -35,16 +35,16 @@ const NavBar = () => {
   };
 
   const preloadPage = (path) => {
-  if (path === "/about") {
-    import("../pages/AboutPage");
-  }
-  if (path === "/products") {
-    import("../pages/ProductPage");
-  }
-  if (path === "/contact") {
-    import("../pages/ContactPage");
-  }
-};
+    if (path === "/about") {
+      import("../pages/AboutPage");
+    }
+    if (path === "/products") {
+      import("../pages/ProductPage");
+    }
+    if (path === "/contact") {
+      import("../pages/ContactPage");
+    }
+  };
   return (
     <>
       <div className="fixed w-full z-50 top-0 left-0">
@@ -83,7 +83,7 @@ const NavBar = () => {
               >
                 <Link
                   to={link.path}
-                   onMouseEnter={() => preloadPage(link.path)}
+                  onMouseEnter={() => preloadPage(link.path)}
                   className={`px-4 py-2 rounded-full font-inter font-semibold transition-all duration-300 cursor-pointer
     ${
       location.pathname === link.path
@@ -139,39 +139,58 @@ const NavBar = () => {
         {/* Mobile Menu */}
         <AnimatePresence>
           {menuOpen && (
-            <motion.ul
-              className="lg:hidden bg-white backdrop-blur-sm flex flex-col items-center py-6 space-y-4 text-green-700 font-medium"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -50 }}
-              transition={{ duration: 0.3 }}
-              style={{ fontFamily: "inter" }}
-            >
-              {links.map((link, i) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <Link
-                    to={link.path}
-                    className={`text-lg transition-colors duration-300 
-    ${
-      location.pathname === link.path
-        ? "text-green-600 font-bold"
-        : "text-green-700 hover:text-orange-500"
-    }`}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                </motion.li>
-              ))}
-            </motion.ul>
+            <>
+              {/* Soft overlay */}
+              <motion.div
+                className="fixed inset-0 bg-black/30 z-40"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setMenuOpen(false)}
+              />
+
+              {/* Side-peek panel */}
+              <motion.div
+                className="fixed top-0 right-0 h-full w-[65%] max-w-sm bg-white z-50 shadow-2xl rounded-l-3xl p-6 flex flex-col"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", stiffness: 110, damping: 18 }}
+              >
+                {/* Header */}
+                <div className="flex justify-between items-center mb-8">
+                  <h2 className="text-xl font-semibold text-green-800">Menu</h2>
+                  <button onClick={() => setMenuOpen(false)}>
+                    <X size={26} />
+                  </button>
+                </div>
+
+                {/* Links */}
+                <ul className="flex flex-col gap-5 text-green-900 font-semibold">
+                  {links.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        to={link.path}
+                        onClick={() => setMenuOpen(false)}
+                        className={`block px-4 py-3 rounded-xl transition ${
+                          location.pathname === link.path
+                            ? "bg-green-700 text-white"
+                            : "hover:bg-green-100"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Bottom icons */}
+               
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
+
         {/* Hidden SEO links for Google */}
         <div style={{ display: "none" }}>
           <a href="/">Home</a>

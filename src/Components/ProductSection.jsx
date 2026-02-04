@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Rating,
-  Button,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
+  Button
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import grassImg from "../assets/grass.webp"; // update your path
+
 import productSectionBg from "../assets/productSectionBg.webp";
 // import cow from "../assets/cow.png";
 import kulfiImg from "../assets/product_img/productKulfi.webp";
 import pannerImg from "../assets/product_img/productPanner.webp";
 import ClientReviewBox from "./ClientReview";
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -97,7 +92,7 @@ const ProductSection = () => {
         className="w-full py-10 min-h-[90vh] relative  bg-cover bg-center bg-no-repeat px-6"
         style={{
           backgroundImage: `url(${productSectionBg})`,
-          backgroundAttachment:"fixed"
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="absolute inset-0 bg-black/30"></div>
@@ -123,7 +118,7 @@ const ProductSection = () => {
                 initial={{ opacity: 0, y: 70 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                viewport={{once:true}}
+                viewport={{ once: true }}
                 whileHover={{
                   rotateX: 10,
                   rotateY: -10,
@@ -158,7 +153,6 @@ const ProductSection = () => {
                   title={item.title}
                   property="image"
                   loading="lazy"
-                  
                   className="w-full h-72 object-cover rounded-xl mb-5"
                 />
 
@@ -177,6 +171,8 @@ const ProductSection = () => {
                 </p>
 
                 <Button
+                  component={Link}
+                  to="/products"
                   fullWidth
                   variant="contained"
                   sx={{
@@ -186,7 +182,6 @@ const ProductSection = () => {
                     paddingY: "10px",
                     "&:hover": { backgroundColor: "#14532d" },
                   }}
-                  onClick={() => handleOpen(item)}
                   style={{ fontFamily: "Oswald", fontWeight: "400" }}
                 >
                   More Details
@@ -196,46 +191,6 @@ const ProductSection = () => {
           </div>
         </div>
       </section>
-
-      {/* MODAL POPUP */}
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        maxWidth="md"
-        fullWidth
-        PaperProps={{
-          sx: {
-            borderRadius: "20px",
-          },
-        }}
-      >
-        <DialogTitle sx={{ fontWeight: "bold", fontSize: "24px" }}>
-          {selected?.title}
-          <IconButton
-            onClick={handleClose}
-            sx={{ position: "absolute", right: 20, top: 15 }}
-          >
-            <CloseIcon />
-          </IconButton>
-        </DialogTitle>
-
-        <DialogContent dividers>
-          <img
-            src={selected?.img}
-            alt="product"
-            className="w-full h-80 object-contain rounded-xl mb-5"
-          />
-
-         <div
-  className="text-gray-800 text-[16px] leading-relaxed"
-  style={{ lineHeight: "1.7", whiteSpace: "pre-wrap" }}
-  dangerouslySetInnerHTML={{
-    __html: selected?.fullDetails
-      .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")  // Bold headings
-  }}
-></div>
-        </DialogContent>
-      </Dialog>
     </>
   );
 };
